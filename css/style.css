@@ -4,6 +4,10 @@ body {
 h2 {
 	color: red;
 }
-h3{
+h3 {
 	color: blue;
+}
+/* just comment */
+.block {
+	background-color: #fff;
 }
