@@ -1,16 +1,260 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
 body {
-	background-color: rgb(133, 65, 65);
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
-h2 {
-	color: red;
+
+input,
+button,
+textarea {
+  font-family: inherit;
 }
-h3 {
-	color: blue;
+
+input::-ms-clear {
+  display: none;
 }
-/* just comment */
-.block {
-	background-color: #fff;
+
+button {
+  cursor: pointer;
 }
-.block2 {
-	background-color: #000;
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  font-family: Roboto;
+}
+
+.main-cards-inner {
+  padding-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 922px) {
+  .main-cards-inner {
+    max-width: 625px;
+  }
+}
+
+@media (max-width: 617px) {
+  .main-cards-inner {
+    max-width: 320px;
+  }
+}
+
+.card-main {
+  margin: 15px 0 0 15px;
+}
+
+.card {
+  min-width: 290px;
+  min-height: 203px;
+  max-height: 203px;
+  background-color: #cfcfcf;
+  position: relative;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2), 1px -2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2), 1px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 6px;
+  top: 8px;
+}
+
+.card__job-title {
+  width: 196px;
+  position: absolute;
+  left: 54px;
+  top: 8px;
+  font-size: 18px;
+  line-height: 18px;
+  color: #000;
+}
+
+.card__company-name {
+  width: 196px;
+  position: absolute;
+  left: 54px;
+  top: 48px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #969696;
+}
+
+.card__tags {
+  position: absolute;
+  left: 6px;
+  top: 141px;
+  max-width: 240px;
+}
+
+.card__tag {
+  border: 1px solid #969696;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.card__tag:last-child {
+  margin-bottom: 0px;
+}
+
+.card__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 186px;
+}
+
+.card .card-option__salary {
+  position: absolute;
+  left: 6px;
+  top: 94px;
+}
+
+.card .card-option__exp {
+  position: absolute;
+  left: 83px;
+  top: 94px;
+}
+
+.card .card-option__location {
+  position: absolute;
+  left: 180px;
+  top: 94px;
+}
+
+.card .card-option__duration {
+  position: absolute;
+  left: 6px;
+  top: 112px;
+}
+
+.card .card-option__workload {
+  position: absolute;
+  left: 83px;
+  top: 112px;
+}
+
+.card .card-option__example {
+  position: absolute;
+  left: 180px;
+  top: 112px;
+}
+
+.card .card-option__example_main-card-example {
+  text-decoration: underline;
+}
+
+.card-icons {
+  position: absolute;
+  right: 4px;
+  top: 8px;
+}
+
+.chosen-single {
+  padding: 0px !important;
+  margin: 0 !important;
+}
+
+.icon-scale:active {
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+a:active {
+  color: transparent;
 }
