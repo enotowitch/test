@@ -45,7 +45,7 @@ jQuery(document).ready(function () {
 		$('.app-emp-radio__employer').css({ 'color': '#000', 'background-color': grayLightColor });
 	})
 	// ! card hide
-	$('.delete').on('click', function () {
+	$(document).on('click', '.delete', function () {
 		$(this).closest('.card').hide();
 	})
 	// 
@@ -68,7 +68,9 @@ jQuery(document).ready(function () {
 
 
 	$('#post-job-form').on('submit', function (e) {
+		//
 		e.preventDefault();
+		// find title + company name in POST JOB form
 		var postJobTitle = $('#card__post-job-title').val();
 		var postJobCompanyName = $('#card__post-job-company-name').val();
 		// find OPTIONS
@@ -82,9 +84,14 @@ jQuery(document).ready(function () {
 		var choice2 = $('.chosen-choices').find('.search-choice:nth-child(2) span').text();
 		var choice3 = $('.chosen-choices').find('.search-choice:nth-child(3) span').text();
 		// alert(choice1 + choice2 + choice3);
-		$('.main-cards-inner').prepend('<div class="card card-main"><div class="card__job-title">' + postJobTitle + '</div><div class="card__company-name">' + postJobCompanyName + '</div><ul><li class="card-option__salary">' + postJobOptionSalary + '</li><li class="card-option__exp">' + postJobOptionExp + '</li><li class="card-option__location">' + postJobOptionLocation + '</li><li class="card-option__duration">' + postJobOptionDuration + '</li><li class="card-option__workload">' + postJobOptionWorkload + '</li></ul><div class="card__icons card-icons"><img class="delete icon-scale" src="img/icons/delete.svg"><img class="like icon-scale" src="img/icons/like.svg"><img class="apply icon-scale" src="img/icons/apply.svg"></div></div>');
+		$('.main-cards-inner').prepend('<div class="card card-main"><div class="card__job-title">' + postJobTitle + '</div><div class="card__company-name">' + postJobCompanyName + '</div><ul><li class="card-option__salary">' + postJobOptionSalary + '</li><li class="card-option__exp">' + postJobOptionExp + '</li><li class="card-option__location">' + postJobOptionLocation + '</li><li class="card-option__duration">' + postJobOptionDuration + '</li><li class="card-option__workload">' + postJobOptionWorkload + '</li></ul><div class="card__tags"><div class="card__tag added-tag">' + choice1 + '</div><div class="card__tag added-tag">' + choice2 + '</div><div class="card__tag added-tag">' + choice3 + '</div></div><div class="card__icons card-icons"><img class="delete icon-scale" src="img/icons/delete.svg"><img class="like icon-scale" src="img/icons/like.svg"><img class="apply icon-scale" src="img/icons/apply.svg"></div></div>');
 		// RESET
 		$('#post-job-form').trigger("reset");
+		// ! test
+		// todo
+
+		// ? test
+
 	})
 
 
