@@ -77,7 +77,12 @@ jQuery(document).ready(function () {
 		var postJobOptionLocation = $('#card-option__post-job-location').find('.chosen-single span').text();
 		var postJobOptionDuration = $('#card-option__post-job-duration').find('.chosen-single span').text();
 		var postJobOptionWorkload = $('#card-option__post-job-workload').find('.chosen-single span').text();
-		$('.main-cards-inner').prepend('<div class="card card-main"><div class="card__job-title">' + postJobTitle + '</div><div class="card__company-name">' + postJobCompanyName + '</div><ul><li class="card-option__salary">' + postJobOptionSalary + '</li><li class="card-option__exp">' + postJobOptionExp + '</li><li class="card-option__location">' + postJobOptionLocation + '</li><li class="card-option__duration">' + postJobOptionDuration + '</li><li class="card-option__workload">' + postJobOptionWorkload + '</li></ul></div>');
+		// find TAGS
+		var choice1 = $('.chosen-choices').find('.search-choice:nth-child(1) span').text();
+		var choice2 = $('.chosen-choices').find('.search-choice:nth-child(2) span').text();
+		var choice3 = $('.chosen-choices').find('.search-choice:nth-child(3) span').text();
+		// alert(choice1 + choice2 + choice3);
+		$('.main-cards-inner').prepend('<div class="card card-main"><div class="card__job-title">' + postJobTitle + '</div><div class="card__company-name">' + postJobCompanyName + '</div><ul><li class="card-option__salary">' + postJobOptionSalary + '</li><li class="card-option__exp">' + postJobOptionExp + '</li><li class="card-option__location">' + postJobOptionLocation + '</li><li class="card-option__duration">' + postJobOptionDuration + '</li><li class="card-option__workload">' + postJobOptionWorkload + '</li></ul><div class="card__icons card-icons"><img class="delete icon-scale" src="img/icons/delete.svg"><img class="like icon-scale" src="img/icons/like.svg"><img class="apply icon-scale" src="img/icons/apply.svg"></div></div>');
 		// RESET
 		$('#post-job-form').trigger("reset");
 	})
