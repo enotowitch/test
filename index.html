@@ -69,8 +69,8 @@
 		</div>
 
 		<a class="header__block nav-block header__img-5" href="#">
-			<svg class="header__icon header__icon_sign-in nav-block" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
-				version="1.1"
+			<svg class="header__icon header__icon_sign-in nav-block" xmlns="http://www.w3.org/2000/svg"
+				xml:space="preserve" version="1.1"
 				style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
 				viewBox="0 0 27 27" xmlns:xlink="http://www.w3.org/1999/xlink">
 				<g id="Слой_x0020_1">
@@ -178,21 +178,21 @@
 		<div class="two-cards-flex">
 			<!-- ! card__post-job -->
 			<div class="card card__post-job">
-				<form class="post-job-form" action="#" method="post" enctype="multipart/form-data">
+				<form class="post-job-form" id="post-job-form" action="#" method="post" enctype="multipart/form-data">
 					<!--  -->
 					<label for="card__input-logo" class="card__logo card__input-logo-label">
 						<span></span>
 					</label>
-					<input id="card__input-logo" type="file" class="card__logo card__input-logo">
-					<textarea class="card__job-title card__post-job-title"
-						placeholder="Type a job title you're looking for..." maxlength="40" minlength="4" required></textarea>
-					<textarea class="card__company-name card__post-job-company-name" placeholder="Type your company name..."
-						maxlength="50" minlength="2" required></textarea>
+					<input type="file" class="card__logo card__input-logo">
+					<textarea class="card__job-title card__post-job-title" id="card__post-job-title"
+						placeholder="Type a job title you're looking for..." maxlength="40" minlength="4"></textarea>
+					<textarea class="card__company-name card__post-job-company-name" id="card__post-job-company-name"
+						placeholder="Type your company name..." maxlength="50" minlength="2"></textarea>
 					<!--  -->
 
 					<ul class="card__post-job-options">
-						<li class="card-option__salary card-option__post-job-salary">
-							<select class="post-job-salary-select" title="Salary" required>
+						<li class="card-option__salary card-option__post-job-salary" id="card-option__post-job-salary">
+							<select class="post-job-salary-select" title="Salary">
 								<option selected disabled value="0">Salary</option>
 								<option value="">DOE</option>
 								<option value="">100 USD</option>
@@ -296,8 +296,8 @@
 								<option value="">9900 USD</option>
 							</select>
 						</li>
-						<li class="card-option__exp card-option__post-job-exp">
-							<select class="post-job-exp-select" title="Experience" required>
+						<li class="card-option__exp card-option__post-job-exp" id="card-option__post-job-exp">
+							<select class="post-job-exp-select" title="Experience">
 								<option selected disabled value="">Experience</option>
 								<option value="">No Exp.</option>
 								<option value="">1 year</option>
@@ -352,8 +352,8 @@
 								<option value="">50 years</option>
 							</select>
 						</li>
-						<li class="card-option__location card-option__post-job-location">
-							<select class="post-job-country-select" title="Country" required>
+						<li class="card-option__location card-option__post-job-location" id="card-option__post-job-location">
+							<select class="post-job-country-select" title="Country">
 								<option selected disabled value="0">Location</option>
 								<option value="Worldwide">Worldwide</option>
 								<option value="Afghanistan">Afghanistan</option>
@@ -615,217 +615,217 @@
 								<option value="Zimbabwe">Zimbabwe</option>
 							</select>
 						</li>
-						<li class="card-option__duration">
-							<select class="post-job-duration-select" title="Duration" required>
+						<li class="card-option__duration" id="card-option__post-job-duration">
+							<select class="post-job-duration-select" title="Duration">
 								<option selected disabled value="">Duration</option>
 								<option value="">Permanent</option>
 								<option value="">Temporary</option>
-								<option value="">From time to time</option>
+								<option value="">Time to time</option>
 							</select>
 						</li>
-						<li class="card-option__workload">
-							<select class="post-job-workload-select" title="Workload" required>
+						<li class="card-option__workload" id="card-option__post-job-workload">
+							<select class="post-job-workload-select" title="Workload">
 								<option selected disabled value="">Workload</option>
-								<option value="">1 hour per month</option>
-								<option value="">2 hours per month</option>
-								<option value="">3 hours per month</option>
-								<option value="">4 hours per month</option>
-								<option value="">5 hours per month</option>
-								<option value="">6 hours per month</option>
-								<option value="">7 hours per month</option>
-								<option value="">8 hours per month</option>
-								<option value="">9 hours per month</option>
-								<option value="">10 hours per month</option>
-								<option value="">11 hours per month</option>
-								<option value="">12 hours per month</option>
-								<option value="">13 hours per month</option>
-								<option value="">14 hours per month</option>
-								<option value="">15 hours per month</option>
-								<option value="">16 hours per month</option>
-								<option value="">17 hours per month</option>
-								<option value="">18 hours per month</option>
-								<option value="">19 hours per month</option>
-								<option value="">20 hours per month</option>
-								<option value="">21 hours per month</option>
-								<option value="">22 hours per month</option>
-								<option value="">23 hours per month</option>
-								<option value="">24 hours per month</option>
-								<option value="">25 hours per month</option>
-								<option value="">26 hours per month</option>
-								<option value="">27 hours per month</option>
-								<option value="">28 hours per month</option>
-								<option value="">29 hours per month</option>
-								<option value="">30 hours per month</option>
-								<option value="">31 hours per month</option>
-								<option value="">32 hours per month</option>
-								<option value="">33 hours per month</option>
-								<option value="">34 hours per month</option>
-								<option value="">35 hours per month</option>
-								<option value="">36 hours per month</option>
-								<option value="">37 hours per month</option>
-								<option value="">38 hours per month</option>
-								<option value="">39 hours per month</option>
-								<option value="">40 hours per month</option>
-								<option value="">41 hours per month</option>
-								<option value="">42 hours per month</option>
-								<option value="">43 hours per month</option>
-								<option value="">44 hours per month</option>
-								<option value="">45 hours per month</option>
-								<option value="">46 hours per month</option>
-								<option value="">47 hours per month</option>
-								<option value="">48 hours per month</option>
-								<option value="">49 hours per month</option>
-								<option value="">50 hours per month</option>
-								<option value="">51 hours per month</option>
-								<option value="">52 hours per month</option>
-								<option value="">53 hours per month</option>
-								<option value="">54 hours per month</option>
-								<option value="">55 hours per month</option>
-								<option value="">56 hours per month</option>
-								<option value="">57 hours per month</option>
-								<option value="">58 hours per month</option>
-								<option value="">59 hours per month</option>
-								<option value="">60 hours per month</option>
-								<option value="">61 hours per month</option>
-								<option value="">62 hours per month</option>
-								<option value="">63 hours per month</option>
-								<option value="">64 hours per month</option>
-								<option value="">65 hours per month</option>
-								<option value="">66 hours per month</option>
-								<option value="">67 hours per month</option>
-								<option value="">68 hours per month</option>
-								<option value="">69 hours per month</option>
-								<option value="">70 hours per month</option>
-								<option value="">71 hours per month</option>
-								<option value="">72 hours per month</option>
-								<option value="">73 hours per month</option>
-								<option value="">74 hours per month</option>
-								<option value="">75 hours per month</option>
-								<option value="">76 hours per month</option>
-								<option value="">77 hours per month</option>
-								<option value="">78 hours per month</option>
-								<option value="">79 hours per month</option>
-								<option value="">80 hours per month</option>
-								<option value="">81 hours per month</option>
-								<option value="">82 hours per month</option>
-								<option value="">83 hours per month</option>
-								<option value="">84 hours per month</option>
-								<option value="">85 hours per month</option>
-								<option value="">86 hours per month</option>
-								<option value="">87 hours per month</option>
-								<option value="">88 hours per month</option>
-								<option value="">89 hours per month</option>
-								<option value="">90 hours per month</option>
-								<option value="">91 hours per month</option>
-								<option value="">92 hours per month</option>
-								<option value="">93 hours per month</option>
-								<option value="">94 hours per month</option>
-								<option value="">95 hours per month</option>
-								<option value="">96 hours per month</option>
-								<option value="">97 hours per month</option>
-								<option value="">98 hours per month</option>
-								<option value="">99 hours per month</option>
-								<option value="">100 hours per month</option>
-								<option value="">101 hours per month</option>
-								<option value="">102 hours per month</option>
-								<option value="">103 hours per month</option>
-								<option value="">104 hours per month</option>
-								<option value="">105 hours per month</option>
-								<option value="">106 hours per month</option>
-								<option value="">107 hours per month</option>
-								<option value="">108 hours per month</option>
-								<option value="">109 hours per month</option>
-								<option value="">110 hours per month</option>
-								<option value="">111 hours per month</option>
-								<option value="">112 hours per month</option>
-								<option value="">113 hours per month</option>
-								<option value="">114 hours per month</option>
-								<option value="">115 hours per month</option>
-								<option value="">116 hours per month</option>
-								<option value="">117 hours per month</option>
-								<option value="">118 hours per month</option>
-								<option value="">119 hours per month</option>
-								<option value="">120 hours per month</option>
-								<option value="">121 hours per month</option>
-								<option value="">122 hours per month</option>
-								<option value="">123 hours per month</option>
-								<option value="">124 hours per month</option>
-								<option value="">125 hours per month</option>
-								<option value="">126 hours per month</option>
-								<option value="">127 hours per month</option>
-								<option value="">128 hours per month</option>
-								<option value="">129 hours per month</option>
-								<option value="">130 hours per month</option>
-								<option value="">131 hours per month</option>
-								<option value="">132 hours per month</option>
-								<option value="">133 hours per month</option>
-								<option value="">134 hours per month</option>
-								<option value="">135 hours per month</option>
-								<option value="">136 hours per month</option>
-								<option value="">137 hours per month</option>
-								<option value="">138 hours per month</option>
-								<option value="">139 hours per month</option>
-								<option value="">140 hours per month</option>
-								<option value="">141 hours per month</option>
-								<option value="">142 hours per month</option>
-								<option value="">143 hours per month</option>
-								<option value="">144 hours per month</option>
-								<option value="">145 hours per month</option>
-								<option value="">146 hours per month</option>
-								<option value="">147 hours per month</option>
-								<option value="">148 hours per month</option>
-								<option value="">149 hours per month</option>
-								<option value="">150 hours per month</option>
-								<option value="">151 hours per month</option>
-								<option value="">152 hours per month</option>
-								<option value="">153 hours per month</option>
-								<option value="">154 hours per month</option>
-								<option value="">155 hours per month</option>
-								<option value="">156 hours per month</option>
-								<option value="">157 hours per month</option>
-								<option value="">158 hours per month</option>
-								<option value="">159 hours per month</option>
-								<option value="">160 hours per month</option>
-								<option value="">161 hours per month</option>
-								<option value="">162 hours per month</option>
-								<option value="">163 hours per month</option>
-								<option value="">164 hours per month</option>
-								<option value="">165 hours per month</option>
-								<option value="">166 hours per month</option>
-								<option value="">167 hours per month</option>
-								<option value="">168 hours per month</option>
-								<option value="">169 hours per month</option>
-								<option value="">170 hours per month</option>
-								<option value="">171 hours per month</option>
-								<option value="">172 hours per month</option>
-								<option value="">173 hours per month</option>
-								<option value="">174 hours per month</option>
-								<option value="">175 hours per month</option>
-								<option value="">176 hours per month</option>
-								<option value="">177 hours per month</option>
-								<option value="">178 hours per month</option>
-								<option value="">179 hours per month</option>
-								<option value="">180 hours per month</option>
-								<option value="">181 hours per month</option>
-								<option value="">182 hours per month</option>
-								<option value="">183 hours per month</option>
-								<option value="">184 hours per month</option>
-								<option value="">185 hours per month</option>
-								<option value="">186 hours per month</option>
-								<option value="">187 hours per month</option>
-								<option value="">188 hours per month</option>
-								<option value="">189 hours per month</option>
-								<option value="">190 hours per month</option>
-								<option value="">191 hours per month</option>
-								<option value="">192 hours per month</option>
-								<option value="">193 hours per month</option>
-								<option value="">194 hours per month</option>
-								<option value="">195 hours per month</option>
-								<option value="">196 hours per month</option>
-								<option value="">197 hours per month</option>
-								<option value="">198 hours per month</option>
-								<option value="">199 hours per month</option>
-								<option value="">200 hours per month</option>
+								<option value="">1 /mo</option>
+								<option value="">2 h/mo</option>
+								<option value="">3 h/mo</option>
+								<option value="">4 h/mo</option>
+								<option value="">5 h/mo</option>
+								<option value="">6 h/mo</option>
+								<option value="">7 h/mo</option>
+								<option value="">8 h/mo</option>
+								<option value="">9 h/mo</option>
+								<option value="">10 h/mo</option>
+								<option value="">11 h/mo</option>
+								<option value="">12 h/mo</option>
+								<option value="">13 h/mo</option>
+								<option value="">14 h/mo</option>
+								<option value="">15 h/mo</option>
+								<option value="">16 h/mo</option>
+								<option value="">17 h/mo</option>
+								<option value="">18 h/mo</option>
+								<option value="">19 h/mo</option>
+								<option value="">20 h/mo</option>
+								<option value="">21 h/mo</option>
+								<option value="">22 h/mo</option>
+								<option value="">23 h/mo</option>
+								<option value="">24 h/mo</option>
+								<option value="">25 h/mo</option>
+								<option value="">26 h/mo</option>
+								<option value="">27 h/mo</option>
+								<option value="">28 h/mo</option>
+								<option value="">29 h/mo</option>
+								<option value="">30 h/mo</option>
+								<option value="">31 h/mo</option>
+								<option value="">32 h/mo</option>
+								<option value="">33 h/mo</option>
+								<option value="">34 h/mo</option>
+								<option value="">35 h/mo</option>
+								<option value="">36 h/mo</option>
+								<option value="">37 h/mo</option>
+								<option value="">38 h/mo</option>
+								<option value="">39 h/mo</option>
+								<option value="">40 h/mo</option>
+								<option value="">41 h/mo</option>
+								<option value="">42 h/mo</option>
+								<option value="">43 h/mo</option>
+								<option value="">44 h/mo</option>
+								<option value="">45 h/mo</option>
+								<option value="">46 h/mo</option>
+								<option value="">47 h/mo</option>
+								<option value="">48 h/mo</option>
+								<option value="">49 h/mo</option>
+								<option value="">50 h/mo</option>
+								<option value="">51 h/mo</option>
+								<option value="">52 h/mo</option>
+								<option value="">53 h/mo</option>
+								<option value="">54 h/mo</option>
+								<option value="">55 h/mo</option>
+								<option value="">56 h/mo</option>
+								<option value="">57 h/mo</option>
+								<option value="">58 h/mo</option>
+								<option value="">59 h/mo</option>
+								<option value="">60 h/mo</option>
+								<option value="">61 h/mo</option>
+								<option value="">62 h/mo</option>
+								<option value="">63 h/mo</option>
+								<option value="">64 h/mo</option>
+								<option value="">65 h/mo</option>
+								<option value="">66 h/mo</option>
+								<option value="">67 h/mo</option>
+								<option value="">68 h/mo</option>
+								<option value="">69 h/mo</option>
+								<option value="">70 h/mo</option>
+								<option value="">71 h/mo</option>
+								<option value="">72 h/mo</option>
+								<option value="">73 h/mo</option>
+								<option value="">74 h/mo</option>
+								<option value="">75 h/mo</option>
+								<option value="">76 h/mo</option>
+								<option value="">77 h/mo</option>
+								<option value="">78 h/mo</option>
+								<option value="">79 h/mo</option>
+								<option value="">80 h/mo</option>
+								<option value="">81 h/mo</option>
+								<option value="">82 h/mo</option>
+								<option value="">83 h/mo</option>
+								<option value="">84 h/mo</option>
+								<option value="">85 h/mo</option>
+								<option value="">86 h/mo</option>
+								<option value="">87 h/mo</option>
+								<option value="">88 h/mo</option>
+								<option value="">89 h/mo</option>
+								<option value="">90 h/mo</option>
+								<option value="">91 h/mo</option>
+								<option value="">92 h/mo</option>
+								<option value="">93 h/mo</option>
+								<option value="">94 h/mo</option>
+								<option value="">95 h/mo</option>
+								<option value="">96 h/mo</option>
+								<option value="">97 h/mo</option>
+								<option value="">98 h/mo</option>
+								<option value="">99 h/mo</option>
+								<option value="">100 h/mo</option>
+								<option value="">101 h/mo</option>
+								<option value="">102 h/mo</option>
+								<option value="">103 h/mo</option>
+								<option value="">104 h/mo</option>
+								<option value="">105 h/mo</option>
+								<option value="">106 h/mo</option>
+								<option value="">107 h/mo</option>
+								<option value="">108 h/mo</option>
+								<option value="">109 h/mo</option>
+								<option value="">110 h/mo</option>
+								<option value="">111 h/mo</option>
+								<option value="">112 h/mo</option>
+								<option value="">113 h/mo</option>
+								<option value="">114 h/mo</option>
+								<option value="">115 h/mo</option>
+								<option value="">116 h/mo</option>
+								<option value="">117 h/mo</option>
+								<option value="">118 h/mo</option>
+								<option value="">119 h/mo</option>
+								<option value="">120 h/mo</option>
+								<option value="">121 h/mo</option>
+								<option value="">122 h/mo</option>
+								<option value="">123 h/mo</option>
+								<option value="">124 h/mo</option>
+								<option value="">125 h/mo</option>
+								<option value="">126 h/mo</option>
+								<option value="">127 h/mo</option>
+								<option value="">128 h/mo</option>
+								<option value="">129 h/mo</option>
+								<option value="">130 h/mo</option>
+								<option value="">131 h/mo</option>
+								<option value="">132 h/mo</option>
+								<option value="">133 h/mo</option>
+								<option value="">134 h/mo</option>
+								<option value="">135 h/mo</option>
+								<option value="">136 h/mo</option>
+								<option value="">137 h/mo</option>
+								<option value="">138 h/mo</option>
+								<option value="">139 h/mo</option>
+								<option value="">140 h/mo</option>
+								<option value="">141 h/mo</option>
+								<option value="">142 h/mo</option>
+								<option value="">143 h/mo</option>
+								<option value="">144 h/mo</option>
+								<option value="">145 h/mo</option>
+								<option value="">146 h/mo</option>
+								<option value="">147 h/mo</option>
+								<option value="">148 h/mo</option>
+								<option value="">149 h/mo</option>
+								<option value="">150 h/mo</option>
+								<option value="">151 h/mo</option>
+								<option value="">152 h/mo</option>
+								<option value="">153 h/mo</option>
+								<option value="">154 h/mo</option>
+								<option value="">155 h/mo</option>
+								<option value="">156 h/mo</option>
+								<option value="">157 h/mo</option>
+								<option value="">158 h/mo</option>
+								<option value="">159 h/mo</option>
+								<option value="">160 h/mo</option>
+								<option value="">161 h/mo</option>
+								<option value="">162 h/mo</option>
+								<option value="">163 h/mo</option>
+								<option value="">164 h/mo</option>
+								<option value="">165 h/mo</option>
+								<option value="">166 h/mo</option>
+								<option value="">167 h/mo</option>
+								<option value="">168 h/mo</option>
+								<option value="">169 h/mo</option>
+								<option value="">170 h/mo</option>
+								<option value="">171 h/mo</option>
+								<option value="">172 h/mo</option>
+								<option value="">173 h/mo</option>
+								<option value="">174 h/mo</option>
+								<option value="">175 h/mo</option>
+								<option value="">176 h/mo</option>
+								<option value="">177 h/mo</option>
+								<option value="">178 h/mo</option>
+								<option value="">179 h/mo</option>
+								<option value="">180 h/mo</option>
+								<option value="">181 h/mo</option>
+								<option value="">182 h/mo</option>
+								<option value="">183 h/mo</option>
+								<option value="">184 h/mo</option>
+								<option value="">185 h/mo</option>
+								<option value="">186 h/mo</option>
+								<option value="">187 h/mo</option>
+								<option value="">188 h/mo</option>
+								<option value="">189 h/mo</option>
+								<option value="">190 h/mo</option>
+								<option value="">191 h/mo</option>
+								<option value="">192 h/mo</option>
+								<option value="">193 h/mo</option>
+								<option value="">194 h/mo</option>
+								<option value="">195 h/mo</option>
+								<option value="">196 h/mo</option>
+								<option value="">197 h/mo</option>
+								<option value="">198 h/mo</option>
+								<option value="">199 h/mo</option>
+								<option value="">200 h/mo</option>
 							</select>
 						</li>
 						<li class="card-option__example card-option__post-job-example">Load Example</li>
@@ -835,8 +835,8 @@
 						<!-- <div class="card__tag">animation</div>
 						<div class="card__tag">presentation</div>
 						<div class="card__tag">illustration</div> -->
-						<select class="post-job-tags-select" title="Choose 3 tags" required
-							data-placeholder="Choose 3 tags..." multiple>
+						<select class="post-job-tags-select" title="Choose 3 tags" data-placeholder="Choose 3 tags..."
+							multiple>
 							<optgroup label="DESIGN">
 								<option value="all-design">All DESIGN</option>
 								<option value="animation">animation</option>
@@ -953,16 +953,16 @@
 					<label for="card__input-logo" class="card__logo card__input-logo-label">
 						<span></span>
 					</label>
-					<input id="card__input-logo" type="file" class="card__logo card__input-logo">
+					<input type="file" class="card__logo card__input-logo">
 					<textarea class="card__job-title card__post-job-title" placeholder="Your profession..." maxlength="40"
-						minlength="4" required></textarea>
+						minlength="4"></textarea>
 					<textarea class="card__company-name card__post-job-company-name"
-						placeholder="Company/freelancer/self-empoyed..." maxlength="50" minlength="2" required></textarea>
+						placeholder="Company/freelancer/self-empoyed..." maxlength="50" minlength="2"></textarea>
 					<!--  -->
 
 					<ul class="card__post-job-options">
 						<li class="card-option__salary card-option__post-job-salary">
-							<select class="post-job-salary-select" title="Salary" required>
+							<select class="post-job-salary-select" title="Salary">
 								<option selected disabled value="0">Salary</option>
 								<option value="">DOE</option>
 								<option value="">100 USD</option>
@@ -1067,7 +1067,7 @@
 							</select>
 						</li>
 						<li class="card-option__exp card-option__post-job-exp">
-							<select class="post-job-exp-select" title="Experience" required>
+							<select class="post-job-exp-select" title="Experience">
 								<option selected disabled value="">Experience</option>
 								<option value="">No Exp.</option>
 								<option value="">1 year</option>
@@ -1123,7 +1123,7 @@
 							</select>
 						</li>
 						<li class="card-option__location card-option__post-job-location">
-							<select class="post-job-country-select" title="Country" required>
+							<select class="post-job-country-select" title="Country">
 								<option selected disabled value="0">Location</option>
 								<option value="Worldwide">Worldwide</option>
 								<option value="Afghanistan">Afghanistan</option>
@@ -1386,216 +1386,216 @@
 							</select>
 						</li>
 						<li class="card-option__duration">
-							<select class="post-job-duration-select" title="Duration" required>
+							<select class="post-job-duration-select" title="Duration">
 								<option selected disabled value="">Duration</option>
 								<option value="">Permanent</option>
 								<option value="">Temporary</option>
-								<option value="">From time to time</option>
+								<option value="">Time to time</option>
 							</select>
 						</li>
 						<li class="card-option__workload">
-							<select class="post-job-workload-select" title="Workload" required>
+							<select class="post-job-workload-select" title="Workload">
 								<option selected disabled value="">Workload</option>
-								<option value="">1 hour per month</option>
-								<option value="">2 hours per month</option>
-								<option value="">3 hours per month</option>
-								<option value="">4 hours per month</option>
-								<option value="">5 hours per month</option>
-								<option value="">6 hours per month</option>
-								<option value="">7 hours per month</option>
-								<option value="">8 hours per month</option>
-								<option value="">9 hours per month</option>
-								<option value="">10 hours per month</option>
-								<option value="">11 hours per month</option>
-								<option value="">12 hours per month</option>
-								<option value="">13 hours per month</option>
-								<option value="">14 hours per month</option>
-								<option value="">15 hours per month</option>
-								<option value="">16 hours per month</option>
-								<option value="">17 hours per month</option>
-								<option value="">18 hours per month</option>
-								<option value="">19 hours per month</option>
-								<option value="">20 hours per month</option>
-								<option value="">21 hours per month</option>
-								<option value="">22 hours per month</option>
-								<option value="">23 hours per month</option>
-								<option value="">24 hours per month</option>
-								<option value="">25 hours per month</option>
-								<option value="">26 hours per month</option>
-								<option value="">27 hours per month</option>
-								<option value="">28 hours per month</option>
-								<option value="">29 hours per month</option>
-								<option value="">30 hours per month</option>
-								<option value="">31 hours per month</option>
-								<option value="">32 hours per month</option>
-								<option value="">33 hours per month</option>
-								<option value="">34 hours per month</option>
-								<option value="">35 hours per month</option>
-								<option value="">36 hours per month</option>
-								<option value="">37 hours per month</option>
-								<option value="">38 hours per month</option>
-								<option value="">39 hours per month</option>
-								<option value="">40 hours per month</option>
-								<option value="">41 hours per month</option>
-								<option value="">42 hours per month</option>
-								<option value="">43 hours per month</option>
-								<option value="">44 hours per month</option>
-								<option value="">45 hours per month</option>
-								<option value="">46 hours per month</option>
-								<option value="">47 hours per month</option>
-								<option value="">48 hours per month</option>
-								<option value="">49 hours per month</option>
-								<option value="">50 hours per month</option>
-								<option value="">51 hours per month</option>
-								<option value="">52 hours per month</option>
-								<option value="">53 hours per month</option>
-								<option value="">54 hours per month</option>
-								<option value="">55 hours per month</option>
-								<option value="">56 hours per month</option>
-								<option value="">57 hours per month</option>
-								<option value="">58 hours per month</option>
-								<option value="">59 hours per month</option>
-								<option value="">60 hours per month</option>
-								<option value="">61 hours per month</option>
-								<option value="">62 hours per month</option>
-								<option value="">63 hours per month</option>
-								<option value="">64 hours per month</option>
-								<option value="">65 hours per month</option>
-								<option value="">66 hours per month</option>
-								<option value="">67 hours per month</option>
-								<option value="">68 hours per month</option>
-								<option value="">69 hours per month</option>
-								<option value="">70 hours per month</option>
-								<option value="">71 hours per month</option>
-								<option value="">72 hours per month</option>
-								<option value="">73 hours per month</option>
-								<option value="">74 hours per month</option>
-								<option value="">75 hours per month</option>
-								<option value="">76 hours per month</option>
-								<option value="">77 hours per month</option>
-								<option value="">78 hours per month</option>
-								<option value="">79 hours per month</option>
-								<option value="">80 hours per month</option>
-								<option value="">81 hours per month</option>
-								<option value="">82 hours per month</option>
-								<option value="">83 hours per month</option>
-								<option value="">84 hours per month</option>
-								<option value="">85 hours per month</option>
-								<option value="">86 hours per month</option>
-								<option value="">87 hours per month</option>
-								<option value="">88 hours per month</option>
-								<option value="">89 hours per month</option>
-								<option value="">90 hours per month</option>
-								<option value="">91 hours per month</option>
-								<option value="">92 hours per month</option>
-								<option value="">93 hours per month</option>
-								<option value="">94 hours per month</option>
-								<option value="">95 hours per month</option>
-								<option value="">96 hours per month</option>
-								<option value="">97 hours per month</option>
-								<option value="">98 hours per month</option>
-								<option value="">99 hours per month</option>
-								<option value="">100 hours per month</option>
-								<option value="">101 hours per month</option>
-								<option value="">102 hours per month</option>
-								<option value="">103 hours per month</option>
-								<option value="">104 hours per month</option>
-								<option value="">105 hours per month</option>
-								<option value="">106 hours per month</option>
-								<option value="">107 hours per month</option>
-								<option value="">108 hours per month</option>
-								<option value="">109 hours per month</option>
-								<option value="">110 hours per month</option>
-								<option value="">111 hours per month</option>
-								<option value="">112 hours per month</option>
-								<option value="">113 hours per month</option>
-								<option value="">114 hours per month</option>
-								<option value="">115 hours per month</option>
-								<option value="">116 hours per month</option>
-								<option value="">117 hours per month</option>
-								<option value="">118 hours per month</option>
-								<option value="">119 hours per month</option>
-								<option value="">120 hours per month</option>
-								<option value="">121 hours per month</option>
-								<option value="">122 hours per month</option>
-								<option value="">123 hours per month</option>
-								<option value="">124 hours per month</option>
-								<option value="">125 hours per month</option>
-								<option value="">126 hours per month</option>
-								<option value="">127 hours per month</option>
-								<option value="">128 hours per month</option>
-								<option value="">129 hours per month</option>
-								<option value="">130 hours per month</option>
-								<option value="">131 hours per month</option>
-								<option value="">132 hours per month</option>
-								<option value="">133 hours per month</option>
-								<option value="">134 hours per month</option>
-								<option value="">135 hours per month</option>
-								<option value="">136 hours per month</option>
-								<option value="">137 hours per month</option>
-								<option value="">138 hours per month</option>
-								<option value="">139 hours per month</option>
-								<option value="">140 hours per month</option>
-								<option value="">141 hours per month</option>
-								<option value="">142 hours per month</option>
-								<option value="">143 hours per month</option>
-								<option value="">144 hours per month</option>
-								<option value="">145 hours per month</option>
-								<option value="">146 hours per month</option>
-								<option value="">147 hours per month</option>
-								<option value="">148 hours per month</option>
-								<option value="">149 hours per month</option>
-								<option value="">150 hours per month</option>
-								<option value="">151 hours per month</option>
-								<option value="">152 hours per month</option>
-								<option value="">153 hours per month</option>
-								<option value="">154 hours per month</option>
-								<option value="">155 hours per month</option>
-								<option value="">156 hours per month</option>
-								<option value="">157 hours per month</option>
-								<option value="">158 hours per month</option>
-								<option value="">159 hours per month</option>
-								<option value="">160 hours per month</option>
-								<option value="">161 hours per month</option>
-								<option value="">162 hours per month</option>
-								<option value="">163 hours per month</option>
-								<option value="">164 hours per month</option>
-								<option value="">165 hours per month</option>
-								<option value="">166 hours per month</option>
-								<option value="">167 hours per month</option>
-								<option value="">168 hours per month</option>
-								<option value="">169 hours per month</option>
-								<option value="">170 hours per month</option>
-								<option value="">171 hours per month</option>
-								<option value="">172 hours per month</option>
-								<option value="">173 hours per month</option>
-								<option value="">174 hours per month</option>
-								<option value="">175 hours per month</option>
-								<option value="">176 hours per month</option>
-								<option value="">177 hours per month</option>
-								<option value="">178 hours per month</option>
-								<option value="">179 hours per month</option>
-								<option value="">180 hours per month</option>
-								<option value="">181 hours per month</option>
-								<option value="">182 hours per month</option>
-								<option value="">183 hours per month</option>
-								<option value="">184 hours per month</option>
-								<option value="">185 hours per month</option>
-								<option value="">186 hours per month</option>
-								<option value="">187 hours per month</option>
-								<option value="">188 hours per month</option>
-								<option value="">189 hours per month</option>
-								<option value="">190 hours per month</option>
-								<option value="">191 hours per month</option>
-								<option value="">192 hours per month</option>
-								<option value="">193 hours per month</option>
-								<option value="">194 hours per month</option>
-								<option value="">195 hours per month</option>
-								<option value="">196 hours per month</option>
-								<option value="">197 hours per month</option>
-								<option value="">198 hours per month</option>
-								<option value="">199 hours per month</option>
-								<option value="">200 hours per month</option>
+								<option value="">1 /mo</option>
+								<option value="">2 h/mo</option>
+								<option value="">3 h/mo</option>
+								<option value="">4 h/mo</option>
+								<option value="">5 h/mo</option>
+								<option value="">6 h/mo</option>
+								<option value="">7 h/mo</option>
+								<option value="">8 h/mo</option>
+								<option value="">9 h/mo</option>
+								<option value="">10 h/mo</option>
+								<option value="">11 h/mo</option>
+								<option value="">12 h/mo</option>
+								<option value="">13 h/mo</option>
+								<option value="">14 h/mo</option>
+								<option value="">15 h/mo</option>
+								<option value="">16 h/mo</option>
+								<option value="">17 h/mo</option>
+								<option value="">18 h/mo</option>
+								<option value="">19 h/mo</option>
+								<option value="">20 h/mo</option>
+								<option value="">21 h/mo</option>
+								<option value="">22 h/mo</option>
+								<option value="">23 h/mo</option>
+								<option value="">24 h/mo</option>
+								<option value="">25 h/mo</option>
+								<option value="">26 h/mo</option>
+								<option value="">27 h/mo</option>
+								<option value="">28 h/mo</option>
+								<option value="">29 h/mo</option>
+								<option value="">30 h/mo</option>
+								<option value="">31 h/mo</option>
+								<option value="">32 h/mo</option>
+								<option value="">33 h/mo</option>
+								<option value="">34 h/mo</option>
+								<option value="">35 h/mo</option>
+								<option value="">36 h/mo</option>
+								<option value="">37 h/mo</option>
+								<option value="">38 h/mo</option>
+								<option value="">39 h/mo</option>
+								<option value="">40 h/mo</option>
+								<option value="">41 h/mo</option>
+								<option value="">42 h/mo</option>
+								<option value="">43 h/mo</option>
+								<option value="">44 h/mo</option>
+								<option value="">45 h/mo</option>
+								<option value="">46 h/mo</option>
+								<option value="">47 h/mo</option>
+								<option value="">48 h/mo</option>
+								<option value="">49 h/mo</option>
+								<option value="">50 h/mo</option>
+								<option value="">51 h/mo</option>
+								<option value="">52 h/mo</option>
+								<option value="">53 h/mo</option>
+								<option value="">54 h/mo</option>
+								<option value="">55 h/mo</option>
+								<option value="">56 h/mo</option>
+								<option value="">57 h/mo</option>
+								<option value="">58 h/mo</option>
+								<option value="">59 h/mo</option>
+								<option value="">60 h/mo</option>
+								<option value="">61 h/mo</option>
+								<option value="">62 h/mo</option>
+								<option value="">63 h/mo</option>
+								<option value="">64 h/mo</option>
+								<option value="">65 h/mo</option>
+								<option value="">66 h/mo</option>
+								<option value="">67 h/mo</option>
+								<option value="">68 h/mo</option>
+								<option value="">69 h/mo</option>
+								<option value="">70 h/mo</option>
+								<option value="">71 h/mo</option>
+								<option value="">72 h/mo</option>
+								<option value="">73 h/mo</option>
+								<option value="">74 h/mo</option>
+								<option value="">75 h/mo</option>
+								<option value="">76 h/mo</option>
+								<option value="">77 h/mo</option>
+								<option value="">78 h/mo</option>
+								<option value="">79 h/mo</option>
+								<option value="">80 h/mo</option>
+								<option value="">81 h/mo</option>
+								<option value="">82 h/mo</option>
+								<option value="">83 h/mo</option>
+								<option value="">84 h/mo</option>
+								<option value="">85 h/mo</option>
+								<option value="">86 h/mo</option>
+								<option value="">87 h/mo</option>
+								<option value="">88 h/mo</option>
+								<option value="">89 h/mo</option>
+								<option value="">90 h/mo</option>
+								<option value="">91 h/mo</option>
+								<option value="">92 h/mo</option>
+								<option value="">93 h/mo</option>
+								<option value="">94 h/mo</option>
+								<option value="">95 h/mo</option>
+								<option value="">96 h/mo</option>
+								<option value="">97 h/mo</option>
+								<option value="">98 h/mo</option>
+								<option value="">99 h/mo</option>
+								<option value="">100 h/mo</option>
+								<option value="">101 h/mo</option>
+								<option value="">102 h/mo</option>
+								<option value="">103 h/mo</option>
+								<option value="">104 h/mo</option>
+								<option value="">105 h/mo</option>
+								<option value="">106 h/mo</option>
+								<option value="">107 h/mo</option>
+								<option value="">108 h/mo</option>
+								<option value="">109 h/mo</option>
+								<option value="">110 h/mo</option>
+								<option value="">111 h/mo</option>
+								<option value="">112 h/mo</option>
+								<option value="">113 h/mo</option>
+								<option value="">114 h/mo</option>
+								<option value="">115 h/mo</option>
+								<option value="">116 h/mo</option>
+								<option value="">117 h/mo</option>
+								<option value="">118 h/mo</option>
+								<option value="">119 h/mo</option>
+								<option value="">120 h/mo</option>
+								<option value="">121 h/mo</option>
+								<option value="">122 h/mo</option>
+								<option value="">123 h/mo</option>
+								<option value="">124 h/mo</option>
+								<option value="">125 h/mo</option>
+								<option value="">126 h/mo</option>
+								<option value="">127 h/mo</option>
+								<option value="">128 h/mo</option>
+								<option value="">129 h/mo</option>
+								<option value="">130 h/mo</option>
+								<option value="">131 h/mo</option>
+								<option value="">132 h/mo</option>
+								<option value="">133 h/mo</option>
+								<option value="">134 h/mo</option>
+								<option value="">135 h/mo</option>
+								<option value="">136 h/mo</option>
+								<option value="">137 h/mo</option>
+								<option value="">138 h/mo</option>
+								<option value="">139 h/mo</option>
+								<option value="">140 h/mo</option>
+								<option value="">141 h/mo</option>
+								<option value="">142 h/mo</option>
+								<option value="">143 h/mo</option>
+								<option value="">144 h/mo</option>
+								<option value="">145 h/mo</option>
+								<option value="">146 h/mo</option>
+								<option value="">147 h/mo</option>
+								<option value="">148 h/mo</option>
+								<option value="">149 h/mo</option>
+								<option value="">150 h/mo</option>
+								<option value="">151 h/mo</option>
+								<option value="">152 h/mo</option>
+								<option value="">153 h/mo</option>
+								<option value="">154 h/mo</option>
+								<option value="">155 h/mo</option>
+								<option value="">156 h/mo</option>
+								<option value="">157 h/mo</option>
+								<option value="">158 h/mo</option>
+								<option value="">159 h/mo</option>
+								<option value="">160 h/mo</option>
+								<option value="">161 h/mo</option>
+								<option value="">162 h/mo</option>
+								<option value="">163 h/mo</option>
+								<option value="">164 h/mo</option>
+								<option value="">165 h/mo</option>
+								<option value="">166 h/mo</option>
+								<option value="">167 h/mo</option>
+								<option value="">168 h/mo</option>
+								<option value="">169 h/mo</option>
+								<option value="">170 h/mo</option>
+								<option value="">171 h/mo</option>
+								<option value="">172 h/mo</option>
+								<option value="">173 h/mo</option>
+								<option value="">174 h/mo</option>
+								<option value="">175 h/mo</option>
+								<option value="">176 h/mo</option>
+								<option value="">177 h/mo</option>
+								<option value="">178 h/mo</option>
+								<option value="">179 h/mo</option>
+								<option value="">180 h/mo</option>
+								<option value="">181 h/mo</option>
+								<option value="">182 h/mo</option>
+								<option value="">183 h/mo</option>
+								<option value="">184 h/mo</option>
+								<option value="">185 h/mo</option>
+								<option value="">186 h/mo</option>
+								<option value="">187 h/mo</option>
+								<option value="">188 h/mo</option>
+								<option value="">189 h/mo</option>
+								<option value="">190 h/mo</option>
+								<option value="">191 h/mo</option>
+								<option value="">192 h/mo</option>
+								<option value="">193 h/mo</option>
+								<option value="">194 h/mo</option>
+								<option value="">195 h/mo</option>
+								<option value="">196 h/mo</option>
+								<option value="">197 h/mo</option>
+								<option value="">198 h/mo</option>
+								<option value="">199 h/mo</option>
+								<option value="">200 h/mo</option>
 							</select>
 						</li>
 						<li class="card-option__example card-option__post-job-example">Load Example</li>
@@ -1605,8 +1605,8 @@
 						<!-- <div class="card__tag">animation</div>
 						<div class="card__tag">presentation</div>
 						<div class="card__tag">illustration</div> -->
-						<select class="post-job-tags-select" title="Choose 3 tags" required
-							data-placeholder="Choose 3 tags..." multiple>
+						<select class="post-job-tags-select" title="Choose 3 tags" data-placeholder="Choose 3 tags..."
+							multiple>
 							<optgroup label="DESIGN">
 								<option value="all-design">All DESIGN</option>
 								<option value="animation">animation</option>

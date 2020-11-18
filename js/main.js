@@ -64,8 +64,23 @@ jQuery(document).ready(function () {
 
 	// ! delete
 
+	// ! FOR POST JOB form
 
 
+	$('#post-job-form').on('submit', function (e) {
+		e.preventDefault();
+		var postJobTitle = $('#card__post-job-title').val();
+		var postJobCompanyName = $('#card__post-job-company-name').val();
+		// find OPTIONS
+		var postJobOptionSalary = $('#card-option__post-job-salary').find('.chosen-single span').text();
+		var postJobOptionExp = $('#card-option__post-job-exp').find('.chosen-single span').text();
+		var postJobOptionLocation = $('#card-option__post-job-location').find('.chosen-single span').text();
+		var postJobOptionDuration = $('#card-option__post-job-duration').find('.chosen-single span').text();
+		var postJobOptionWorkload = $('#card-option__post-job-workload').find('.chosen-single span').text();
+		$('.main-cards-inner').prepend('<div class="card card-main"><div class="card__job-title">' + postJobTitle + '</div><div class="card__company-name">' + postJobCompanyName + '</div><ul><li class="card-option__salary">' + postJobOptionSalary + '</li><li class="card-option__exp">' + postJobOptionExp + '</li><li class="card-option__location">' + postJobOptionLocation + '</li><li class="card-option__duration">' + postJobOptionDuration + '</li><li class="card-option__workload">' + postJobOptionWorkload + '</li></ul></div>');
+		// RESET
+		$('#post-job-form').trigger("reset");
+	})
 
 
 

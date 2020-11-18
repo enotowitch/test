@@ -9,6 +9,17 @@ $(document).ready(function () {
 
 	// ! delete
 
+	// ! FOR POST JOB
+
+
+
+	$('.post-job-reset-label').on('click', function () {
+		$('.search-choice').detach();
+
+	})
+	// ! delete
+
+
 
 });
 
