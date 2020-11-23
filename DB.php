@@ -3,12 +3,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "thetestdb";
+$dbname = "smth";
 
 $connect = new mysqli($servername, $username, $password, $dbname);
 
 if($connect->connect_error){
-die("Conenction failed");
+die("Connection failed");
 }
-echo "conn success";
+// echo "conn success";
+header("location: index.php");
 ?>
