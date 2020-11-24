@@ -298,7 +298,7 @@
 						</li>
 						<li class="card-option__exp card-option__post-job-exp" id="card-option__post-job-exp">
 							<select class="post-job-exp-select" name="job_exp" title="Experience">
-								<option selected disabled value="">Experience</option>
+								<option selected disabled value="0">Experience</option>
 								<option value="No Exp.">No Exp.</option>
 								<option value="1 year">1 year</option>
 								<option value="2 years">2 years</option>
@@ -617,7 +617,7 @@
 						</li>
 						<li class="card-option__duration" id="card-option__post-job-duration">
 							<select class="post-job-duration-select" name="job_duration" title="Duration">
-								<option selected disabled value="">Duration</option>
+								<option selected disabled value="0">Duration</option>
 								<option value="Permanent">Permanent</option>
 								<option value="Temporary">Temporary</option>
 								<option value="Time to time">Time to time</option>
@@ -625,7 +625,7 @@
 						</li>
 						<li class="card-option__workload" id="card-option__post-job-workload">
 							<select class="post-job-workload-select" name="job_workload" title="Workload">
-								<option selected disabled value="">Workload</option>
+								<option selected disabled value="0">Workload</option>
 								<option value="1 /mo">1 /mo</option>
 								<option value="2 h/mo">2 h/mo</option>
 								<option value="3 h/mo">3 h/mo</option>
@@ -1907,6 +1907,7 @@
 		<div class="main-cards-inner">
 			<!--  -->
 			<!-- ! MAIN CARD php -->
+			<!-- ! PHP -->
 			<?php
 			$servername = "localhost";
 			$username = "root";
@@ -1928,6 +1929,7 @@
 			{
 			while ($row = $result-> fetch_assoc()) {
 				// echo "<div class='card card-main'><div class='card__job-title'>" .$row["job_title"]. "</div></div>";
+				// ! ADDING CARD php
 				echo '<div class="card card-main">
 				<img class="card__logo" src="https://tinyurl.com/yyccy644" alt="worker-logo">
 				<div class="card__job-title">' .$row["job_title"]. '</div>
@@ -1961,8 +1963,9 @@
 			}
 			$connect-> close();
 			?>
+			<!-- ? PHP -->
 			<!-- ? MAIN CARD php -->
-			<!-- ! MAIN CARD html -->
+			<!-- ! MAIN CARD html EXAMPLE-->
 			<div class="card card-main">
 				<img class="card__logo" src="https://tinyurl.com/yyccy644" alt="worker-logo">
 				<div class="card__job-title">Job title duis ad fugiat do do adipisic</div>
@@ -1989,7 +1992,7 @@
 					<img class="apply icon-scale" src="img/icons/apply.svg" alt="apply">
 				</div>
 			</div>
-			<!-- ? MAIN CARD html -->
+			<!-- ? MAIN CARD html EXAMPLE -->
 			<!--  -->
 		</div>
 	</div>

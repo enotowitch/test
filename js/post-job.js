@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
 
-		if (jobTitle == '' || jobCompanyName == '') {
+		if (jobTitle == '' || jobCompanyName == '' || jobSalary == '0' || jobExp == '0' || jobLocation == '0' || jobDuration == '0' || jobWorkload == '0') {
 			alert('ALL FIELDS ARE REQUIRED!');
 			return false;
 		}
@@ -41,6 +41,30 @@ $(document).ready(function () {
 
 	})
 })
+
+// ! RESET inputs 
+
+
+
+$('.post-job-reset-label').on('click', function () {
+	// $(".post-job-salary-select").trigger("chosen:updated");
+	// $('.search-choice').detach();
+// ??? may cause bugs 
+	window.location.href = window.location.href.replace(/[\?#].*|$/, "?restart");
+
+});
+// ??? may cause bugs 
+$(document).ready(function () {
+	if (window.location.search.indexOf('restart') > -1) {
+		setTimeout(function () {
+			$('#post-job-icon').trigger('click');
+		}, 100)
+	}
+});
+
+
+
+
 
 // ! old prepend
 
