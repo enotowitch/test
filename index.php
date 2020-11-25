@@ -835,10 +835,9 @@
 						<!-- <div class="card__tag">animation</div>
 						<div class="card__tag">presentation</div>
 						<div class="card__tag">illustration</div> -->
-						<select class="post-job-tags-select" title="Choose 3 tags" data-placeholder="Choose 3 tags..."
+						<select class="post-job-tags-select" name="job_tags[]" title="Choose 3 tags" data-placeholder="Choose 3 tags..."
 							multiple>
 							<optgroup label="DESIGN">
-								<option value="all-design">All DESIGN</option>
 								<option value="animation">animation</option>
 								<option value="anime">anime</option>
 								<option value="art">art</option>
@@ -855,7 +854,7 @@
 								<option value="fashion">fashion</option>
 								<option value="graphic">graphic</option>
 								<option value="illustration">illustration</option>
-								<option value="img">img edit</option>
+								<option value="img edit">img edit</option>
 								<option value="layout">layout</option>
 								<option value="motion">motion</option>
 								<option value="photo">photo</option>
@@ -863,27 +862,26 @@
 								<option value="realistic">realistic</option>
 								<option value="social">social</option>
 								<option value="storyboard">storyboard</option>
-								<option value="UX">UX / UI</option>
+								<option value="UX / UI">UX / UI</option>
 								<option value="video">video</option>
-								<option value="VR">VR / AR</option>
+								<option value="VR / AR">VR / AR</option>
 							</optgroup>
 							<optgroup label="DEV">
-								<option value="all-dev">All DEV</option>
 								<option value="QA">QA</option>
 								<option value="CMS">CMS</option>
 								<option value="database">database</option>
 								<option value="desktop">desktop</option>
 								<option value="ecommerce">ecommerce</option>
-								<option value="full">full stack</option>
-								<option value="game">game dev</option>
+								<option value="full stack">full stack</option>
+								<option value="game dev">game dev</option>
 								<option value="mobile">mobile</option>
 								<option value="product">product</option>
 								<option value="management">management</option>
 								<option value="prototype">prototype</option>
 								<option value="software">software</option>
 								<option value="research">research</option>
-								<option value="front">front-end</option>
-								<option value="back">back-End</option>
+								<option value="front-end">front-end</option>
+								<option value="back-end">back-end</option>
 							</optgroup>
 						</select>
 					</div>
@@ -1909,6 +1907,7 @@
 			<!-- ! MAIN CARD php -->
 			<!-- ! PHP -->
 			<?php
+			
 			$servername = "localhost";
 			$username = "root";
 			$password = "";
@@ -1921,7 +1920,7 @@
 			}
 			// echo "CONNECTION SUCCESS";
 			
-				$sql = "SELECT `job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload` from `tbl_card`";
+				$sql = "SELECT `job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload`, `job_tag_1`, `job_tag_2`, `job_tag_3` from `tbl_card`";
 			
 			$result = $connect-> query($sql);
 			
@@ -1945,9 +1944,9 @@
 				</ul>
 				<!-- ! card-tags -->
 				<div class="card__tags">
-					<div class="card__tag">animation</div>
-					<div class="card__tag">presentation</div>
-					<div class="card__tag">illustration</div>
+					<div class="card__tag">' .$row["job_tag_1"]. '</div>
+					<div class="card__tag">' .$row["job_tag_2"]. '</div>
+					<div class="card__tag">' .$row["job_tag_3"]. '</div>
 				</div>
 				<!-- ! card-icons -->
 				<div class="card__icons card-icons">
@@ -1959,7 +1958,7 @@
 			}
 			}
 			else{
-				echo"0 RESULT";
+				echo"while = 0 RESULT";
 			}
 			$connect-> close();
 			?>

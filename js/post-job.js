@@ -7,37 +7,42 @@ $(document).ready(function () {
 	$('#post-job-form').on('submit', function () {
 		var jobTitle = $('#card__post-job-title').val();
 		var jobCompanyName = $('#card__post-job-company-name').val();
+		//  select INFO
 		var jobSalary = $('[name="job_salary"]').find('option:selected').val();
 		var jobExp = $('[name="job_exp"]').find('option:selected').val();
 		var jobLocation = $('[name="job_location"]').find('option:selected').val();
 		var jobDuration = $('[name="job_duration"]').find('option:selected').val();
 		var jobWorkload = $('[name="job_workload"]').find('option:selected').val();
+		// select TAGS
+		var jobTag1 = $('[name="job_tags"]').find('option:selected:eq(0)').val();
+		var jobTag2 = $('[name="job_tags"]').find('option:selected:eq(1)').val();
+		var jobTag3 = $('[name="job_tags"]').find('option:selected:eq(2)').val();
 
+		// alert(jobTag1 + " " + jobTag2 + " " + jobTag3);
 
-
+// ! validation
 		if (jobTitle == '' || jobCompanyName == '' || jobSalary == '0' || jobExp == '0' || jobLocation == '0' || jobDuration == '0' || jobWorkload == '0') {
 			alert('ALL FIELDS ARE REQUIRED!');
 			return false;
 		}
 
 		else {
-			$.ajax({
-				url: 'insert.php',
-				type: 'post',
-				data: $('#post-job-form').serialize(),
-				beforeSend: function () {
-					$('#post-job-form').after().fadeIn().html('LOADING TO SERVER');
-				},
-				success: function (data) {
+		$.ajax({
+			url: 'insert.php',
+			type: 'post',
+			data: $('#post-job-form').serialize(),
+			beforeSend: function () {
+				$('#post-job-form').after().fadeIn().html('LOADING TO SERVER');
+			},
+			success: function (data) {
 
-					$('#post-job-form')[0].reset();
-					$('#response').html('HERE IS ');
-					alert("DATA SAVED");
-				}
-			})
+				$('#post-job-form')[0].reset();
+				$('#response').html('HERE IS ');
+				alert("DATA SAVED");
+			}
+		})
 		}
 
-		// alert(jobSalary);
 
 	})
 })
@@ -49,7 +54,7 @@ $(document).ready(function () {
 $('.post-job-reset-label').on('click', function () {
 	// $(".post-job-salary-select").trigger("chosen:updated");
 	// $('.search-choice').detach();
-// ??? may cause bugs 
+	// ??? may cause bugs 
 	window.location.href = window.location.href.replace(/[\?#].*|$/, "?restart");
 
 });
