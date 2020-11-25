@@ -13,15 +13,12 @@ $(document).ready(function () {
 		var jobLocation = $('[name="job_location"]').find('option:selected').val();
 		var jobDuration = $('[name="job_duration"]').find('option:selected').val();
 		var jobWorkload = $('[name="job_workload"]').find('option:selected').val();
-		// select TAGS
-		var jobTag1 = $('[name="job_tags"]').find('option:selected:eq(0)').val();
-		var jobTag2 = $('[name="job_tags"]').find('option:selected:eq(1)').val();
-		var jobTag3 = $('[name="job_tags"]').find('option:selected:eq(2)').val();
+// number of tags selected
+		var tagsNumberChosen = $('#post-job-form').find('.chosen-choices li').not('.search-field').length;
 
-		// alert(jobTag1 + " " + jobTag2 + " " + jobTag3);
 
 // ! validation
-		if (jobTitle == '' || jobCompanyName == '' || jobSalary == '0' || jobExp == '0' || jobLocation == '0' || jobDuration == '0' || jobWorkload == '0') {
+		if (jobTitle == '' || jobCompanyName == '' || jobSalary == '0' || jobExp == '0' || jobLocation == '0' || jobDuration == '0' || jobWorkload == '0' || tagsNumberChosen < 3) {
 			alert('ALL FIELDS ARE REQUIRED!');
 			return false;
 		}
@@ -68,7 +65,10 @@ $(document).ready(function () {
 });
 
 
+// ! TEST delete
 
+
+// ? TEST delete
 
 
 // ! old prepend
