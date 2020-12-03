@@ -845,7 +845,7 @@
 								<option value="CAD">CAD</option>
 								<option value="cartoonist">cartoonist</option>
 								<option value="character">character</option>
-								<option value="children">children's</option>
+								<option value="children\'s">children's</option>
 								<option value="comic">comic</option>
 								<option value="creative">creative</option>
 								<option value="design">design</option>
@@ -1907,59 +1907,47 @@
 			<!-- ! MAIN CARD php -->
 			<!-- ! PHP -->
 			<?php
+
 			
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "smth";
+			require_once 'DB.php';
 			
-			$connect = new mysqli($servername, $username, $password, $dbname);
+			$cards = mysqli_query($connect, "SELECT * from `tbl_card`");
+			$cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);			
+			?>
 			
-			if($connect->connect_error){
-			die("Conenction failed");
-			}
-			// echo "CONNECTION SUCCESS";
-			
-				$sql = "SELECT `job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload`, `job_tag_1`, `job_tag_2`, `job_tag_3` from `tbl_card`";
-			
-			$result = $connect-> query($sql);
-			
-			if($result-> num_rows > 0)
-			{
-			while ($row = $result-> fetch_assoc()) {
-				// echo "<div class='card card-main'><div class='card__job-title'>" .$row["job_title"]. "</div></div>";
-				// ! ADDING CARD php
-				echo '<div class="card card-main">
+			<? foreach($cards as $card): ?>
+
+			<div class="card card-main">
 				<img class="card__logo" src="https://tinyurl.com/yyccy644" alt="worker-logo">
-				<div class="card__job-title">' .$row["job_title"]. '</div>
-				<div class="card__company-name">' .$row["job_company_name"]. '</div>
+				<div class="card__job-title"><? echo $card["job_title"] ?></div>
+				<div class="card__company-name"><? echo $card["job_company_name"] ?></div>
 				<!-- ! card-option -->
 				<ul>
-					<li class="card-option__salary">' .$row["job_salary"]. '</li>
-					<li class="card-option__exp">' .$row["job_exp"]. '</li>
-					<li class="card-option__location">' .$row["job_location"]. '</li>
-					<li class="card-option__duration">' .$row["job_duration"]. '</li>
-					<li class="card-option__workload">' .$row["job_workload"]. '</li>
+					<li class="card-option__salary"><? echo $card["job_salary"] ?></li>
+					<li class="card-option__exp"><? echo $card["job_exp"] ?></li>
+					<li class="card-option__location"><? echo $card["job_location"] ?></li>
+					<li class="card-option__duration"><? echo $card["job_duration"] ?></li>
+					<li class="card-option__workload"><? echo $card["job_workload"] ?></li>
 					<li class="card-option__example card-option__example_main-card-example">Example</li>
 				</ul>
 				<!-- ! card-tags -->
 				<div class="card__tags">
-					<div class="card__tag">' .$row["job_tag_1"]. '</div>
-					<div class="card__tag">' .$row["job_tag_2"]. '</div>
-					<div class="card__tag">' .$row["job_tag_3"]. '</div>
+					<div class="card__tag"><? echo $card["job_tag_1"] ?></div>
+					<div class="card__tag"><? echo $card["job_tag_2"] ?></div>
+					<div class="card__tag"><? echo $card["job_tag_3"] ?></div>
 				</div>
 				<!-- ! card-icons -->
 				<div class="card__icons card-icons">
-					<img class="delete icon-scale" src="img/icons/delete.svg" alt="delete">
+					<a href="delete.php?id=<? echo $card["job_post_id"] ?>"><img class="delete icon-scale" src="img/icons/delete.svg" alt="delete"></a>
 					<img class="like icon-scale" src="img/icons/like.svg" alt="like">
 					<img class="apply icon-scale" src="img/icons/apply.svg" alt="apply">
 				</div>
-			</div>';
-			}
-			}
-			else{
-				echo"while = 0 RESULT";
-			}
+			</div>
+
+			<? endforeach; ?>
+
+			
+			<?
 			$connect-> close();
 			?>
 			<!-- ? PHP -->

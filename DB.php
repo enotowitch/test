@@ -11,5 +11,5 @@ if($connect->connect_error){
 die("Connection failed");
 }
 // echo "conn success";
-header("location: index.php");
+// header("location: index.php");
 ?>
