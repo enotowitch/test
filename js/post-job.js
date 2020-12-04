@@ -1,6 +1,6 @@
 // ! FOR POST JOB form
 
-// ! new ajax
+// ! ajax
 
 $(document).ready(function () {
 
@@ -23,22 +23,22 @@ $(document).ready(function () {
 			return false;
 		}
 
-		else {
-		$.ajax({
-			url: 'insert.php',
-			type: 'post',
-			data: $('#post-job-form').serialize(),
-			beforeSend: function () {
-				$('#post-job-form').after().fadeIn().html('LOADING TO SERVER');
-			},
-			success: function (data) {
+		// else {
+		// $.ajax({
+		// 	url: 'insert.php',
+		// 	type: 'post',
+		// 	data: $('#post-job-form').serialize(),
+		// 	beforeSend: function () {
+		// 		$('#post-job-form').after().fadeIn().html('LOADING TO SERVER');
+		// 	},
+		// 	success: function (data) {
 
-				$('#post-job-form')[0].reset();
-				$('#response').html('HERE IS ');
-				alert("DATA SAVED");
-			}
-		})
-		}
+		// 		$('#post-job-form')[0].reset();
+		// 		$('#response').html('HERE IS ');
+		// 		alert("DATA SAVED");
+		// 	}
+		// })
+		// }
 
 
 	})
