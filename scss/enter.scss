@@ -11,19 +11,29 @@ form {
 	font-family: Montserrat;
 }
 
-input {
+.reg-input {
 	border: 2px solid $brand-color;
 	width: 200px;
 	height: 40px;
 	line-height: 40px;
 	font-size: 22px;
 	margin: 8px 0;
-	&[type="submit"] {
-		font-size: 16px;
-		background-color: #fff;
-		font-weight: 700;
+}
+
+.reg-input-submit{
+	font-size: 16px;
+	background-color: #fff;
+	font-weight: 700;
+	border: 4px solid $brand-color;
+	width: 200px;
+	height: 40px;
+	&:hover{
+		border: 4px solid #fff;
+		color: #fff;
+		background-color:darken($brand-color, 0%);
 	}
 }
+
 label {
 	font-size: 18px;
 }

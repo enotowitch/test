@@ -22,7 +22,7 @@ if(mysqli_num_rows($check_user) > 0){
 		"user_email" => $user['user_email']
 	];
 
-	header("location: ../profile.php");
+	header("location: ../post_job.php");
 
 	
 	// print_r($_SESSION['user']);

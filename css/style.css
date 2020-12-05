@@ -273,6 +273,11 @@ a:active {
   border: 2px solid #6fda44;
 }
 
+.radio-btn:hover {
+  border: 4px solid #fff;
+  color: #6fda44;
+}
+
 .jobs-portfolios-radio {
   margin: 12px 0 auto;
   position: relative;

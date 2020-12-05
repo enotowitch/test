@@ -13,14 +13,14 @@ include 'header.php';
 <br>
 <!-- Email -->
 	<label for="user_email">User Email</label>
-	<input type="email" name="user_email" id="user_email">
+	<input class="reg-input" type="email" name="user_email" id="user_email">
 	<!-- Password -->
 	<label for="user_pass">Password</label>
-	<input type="password" name="user_pass" id="user_pass">
+	<input class="reg-input" type="password" name="user_pass" id="user_pass">
 	<!-- Confirm Password -->
 	<label for="user_pass_confirm">Confirm Password</label>
-	<input type="password" name="user_pass_confirm" id="user_pass_confirm">
-	<input type="submit" value="SIGN UP">
+	<input class="reg-input" type="password" name="user_pass_confirm" id="user_pass_confirm">
+	<input class="reg-input-submit" type="submit" value="SIGN UP">
 	
 	<div>
 		<? if($_SESSION['validation_msg']){

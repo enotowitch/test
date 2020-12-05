@@ -1,5 +1,9 @@
 <?
-// header("location: index.php");
+session_start();
+include 'header.php';
+?>
+
+<?
 
 require_once 'DB.php';
 
@@ -8,8 +12,6 @@ $id = $_REQUEST['id'];
 
 $cards = mysqli_query($connect, "SELECT * from `tbl_card` WHERE `tbl_card`.`job_post_id` = $id");
 $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);	
-
-
 
 ?>
 
@@ -28,12 +30,21 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 </head>
 <body>
 
-	
+	<style>
+	.prev-selected{
+		color: red;
+	}
+	.card__post-job{
+		width: 290px;
+		margin: 0 auto;
+	}
+	</style>
 
 <? foreach($cards as $card): ?>
 
 
-<div style="width: 290px;" class="card card__post-job">
+
+<div class="card card__post-job">
 	<form class="post-job-form" id="post-job-form" action="update2.php" method="post">
 		<!--  -->
 		<label for="card__input-logo" class="card__logo card__input-logo-label">
@@ -50,7 +61,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 		<ul class="card__post-job-options">
 			<li class="card-option__salary card-option__post-job-salary" id="card-option__post-job-salary">
 				<select class="post-job-salary-select" name="job_salary" title="Salary">
-					<option selected value="<? echo $card["job_salary"] ?>"><? echo $card["job_salary"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_salary"] ?>"><? echo $card["job_salary"] ?></option>
 					<option value="100 USD">100 USD</option>
 					<option value="200 USD">200 USD</option>
 					<option value="300 USD">300 USD</option>
@@ -154,7 +165,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			</li>
 			<li class="card-option__exp card-option__post-job-exp" id="card-option__post-job-exp">
 				<select class="post-job-exp-select" name="job_exp" title="Experience">
-					<option selected value="<? echo $card["job_exp"] ?>"><? echo $card["job_exp"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_exp"] ?>"><? echo $card["job_exp"] ?></option>
 					<option value="No Exp.">No Exp.</option>
 					<option value="1 year">1 year</option>
 					<option value="2 years">2 years</option>
@@ -210,7 +221,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			</li>
 			<li class="card-option__location card-option__post-job-location" id="card-option__post-job-location">
 				<select class="post-job-country-select" name="job_location" title="Country">
-					<option selected value="<? echo $card["job_location"] ?>"><? echo $card["job_location"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_location"] ?>"><? echo $card["job_location"] ?></option>
 					<option value="Worldwide">Worldwide</option>
 					<option value="Afghanistan">Afghanistan</option>
 					<option value="Akrotiri">Akrotiri</option>
@@ -473,7 +484,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			</li>
 			<li class="card-option__duration" id="card-option__post-job-duration">
 				<select class="post-job-duration-select" name="job_duration" title="Duration">
-					<option selected value="<? echo $card["job_duration"] ?>"><? echo $card["job_duration"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_duration"] ?>"><? echo $card["job_duration"] ?></option>
 					<option value="Permanent">Permanent</option>
 					<option value="Temporary">Temporary</option>
 					<option value="Time to time">Time to time</option>
@@ -481,7 +492,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			</li>
 			<li class="card-option__workload" id="card-option__post-job-workload">
 				<select class="post-job-workload-select" name="job_workload" title="Workload">
-					<option selected value="<? echo $card["job_workload"] ?>"><? echo $card["job_workload"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_workload"] ?>"><? echo $card["job_workload"] ?></option>
 					<option value="1 /mo">1 /mo</option>
 					<option value="2 h/mo">2 h/mo</option>
 					<option value="3 h/mo">3 h/mo</option>
@@ -694,9 +705,9 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			<select class="post-job-tags-select" id="post-job-tags-select" name="job_tags[]" title="Choose 3 tags" data-placeholder="Choose 3 tags..."
 				multiple>
 				<optgroup label="DESIGN">
-					<option selected style="color: red;" value="<? echo $card["job_tag_1"] ?>"><? echo $card["job_tag_1"] ?></option>
-					<option selected style="color: red;" value="<? echo $card["job_tag_2"] ?>"><? echo $card["job_tag_2"] ?></option>
-					<option selected style="color: red;" value="<? echo $card["job_tag_3"] ?>"><? echo $card["job_tag_3"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_tag_1"] ?>"><? echo $card["job_tag_1"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_tag_2"] ?>"><? echo $card["job_tag_2"] ?></option>
+					<option class="prev-selected" selected value="<? echo $card["job_tag_3"] ?>"><? echo $card["job_tag_3"] ?></option>
 					<option value="animation">animation</option>
 					<option value="anime">anime</option>
 					<option value="art">art</option>
@@ -767,24 +778,9 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 </div>
 <? endforeach; ?>
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<pre>
-<?
-var_dump($id);
-?>
-</pre>
-
-
-
-
 </body>
 </html>
 
+<?
+include 'footer.php';
+?>
