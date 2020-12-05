@@ -73,13 +73,13 @@
 				xml:space="preserve" version="1.1"
 				style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
 				viewBox="0 0 27 27" xmlns:xlink="http://www.w3.org/1999/xlink">
-				<g id="Слой_x0020_1">
-					<metadata id="CorelCorpID_0Corel-Layer" />
-					<path class="fil0"
+	
+
+					<path id="sign-in-icon"
 						d="M10.69 6.7c0.17,-0.18 0.47,-0.25 0.65,-0.08l6.63 6.03c0.55,0.53 0.49,1.24 0,1.7l-6.63 6.03c-0.18,0.17 -0.46,0.1 -0.65,-0.08 -0.17,-0.18 -0.18,-1.16 0,-1.33l6.16 -5.47 -6.16 -5.47c-0.18,-0.17 -0.18,-1.15 0,-1.33zm2.81 -6.7c7.45,0 13.5,6.05 13.5,13.5 0,7.45 -6.05,13.5 -13.5,13.5 -7.45,0 -13.5,-6.05 -13.5,-13.5 0,-7.45 6.05,-13.5 13.5,-13.5zm0 1.67c6.96,0 11.83,4.87 11.83,11.83 0,6.96 -4.87,11.83 -11.83,11.83 -6.96,0 -11.83,-4.87 -11.83,-11.83 0,-6.96 4.87,-11.83 11.83,-11.83z" />
-				</g>
+
 			</svg>
-			<div class="nav-block-item">Sign in</div>
+			<div class="nav-block-item sign-in">Sign in</div>
 		</a>
 		<a class="header__block nav-block" id="search-icon" href="#">
 			<svg class="header__icon header__icon_search nav-block" viewBox="0 0 19 18" fill="none"
@@ -148,11 +148,11 @@
 					viewBox="0 0 27 27" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="Слой_x0020_1">
 						<metadata id="CorelCorpID_0Corel-Layer" />
-						<path class="fil0"
+						<path id="sign-in-icon2"
 							d="M10.69 6.7c0.17,-0.18 0.47,-0.25 0.65,-0.08l6.63 6.03c0.55,0.53 0.49,1.24 0,1.7l-6.63 6.03c-0.18,0.17 -0.46,0.1 -0.65,-0.08 -0.17,-0.18 -0.18,-1.16 0,-1.33l6.16 -5.47 -6.16 -5.47c-0.18,-0.17 -0.18,-1.15 0,-1.33zm2.81 -6.7c7.45,0 13.5,6.05 13.5,13.5 0,7.45 -6.05,13.5 -13.5,13.5 -7.45,0 -13.5,-6.05 -13.5,-13.5 0,-7.45 6.05,-13.5 13.5,-13.5zm0 1.67c6.96,0 11.83,4.87 11.83,11.83 0,6.96 -4.87,11.83 -11.83,11.83 -6.96,0 -11.83,-4.87 -11.83,-11.83 0,-6.96 4.87,-11.83 11.83,-11.83z" />
 					</g>
 				</svg>
-				<span class="nav-block-item">Sign In</span>
+				<span class="nav-block-item sign-in">Sign In</span>
 			</a>
 			<a class="nav-block" id="search-icon2" href="#">
 				<svg class="header__icon header__icon_search" viewBox="0 0 19 18" fill="none"

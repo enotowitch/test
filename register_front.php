@@ -39,22 +39,11 @@ include 'header.php';
 	<input type="submit" value="REGISTER">
 	
 	<div>
-		<? if($_SESSION['pass_no_match']){
-			echo $_SESSION['pass_no_match'];
-			unset($_SESSION['pass_no_match']);
+		<? if($_SESSION['validation_msg']){
+			echo $_SESSION['validation_msg'];
+			unset($_SESSION['validation_msg']);
 		}
-		 if($_SESSION['empty_email']){
-			echo $_SESSION['empty_email'];
-			unset($_SESSION['empty_email']);
-		} 
-		 if($_SESSION['user_added']){
-			echo $_SESSION['user_added'];
-			unset($_SESSION['user_added']);
-		} 
-		 if($_SESSION['empty_pass']){
-			echo $_SESSION['empty_pass'];
-			unset($_SESSION['empty_pass']);
-		} 
+
 		
 		?>
 	</div>

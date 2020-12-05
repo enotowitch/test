@@ -28,10 +28,10 @@ jQuery(document).ready(function () {
 
 	// ! Coloring svg and names of sections in NAV menu
 
-	$(".nav-block").click(function () {
-		$(".nav-block").find(".nav-block-item,.header__icon").removeClass("nav-block-item-active");
-		$(this).find(".nav-block-item,.header__icon").addClass("nav-block-item-active");
-	});
+	// $(".nav-block").click(function () {
+	// 	$(".nav-block").find(".nav-block-item,.header__icon").removeClass("nav-block-item-active");
+	// 	$(this).find(".nav-block-item,.header__icon").addClass("nav-block-item-active");
+	// });
 
 	// ! delete
 	

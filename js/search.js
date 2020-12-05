@@ -6,6 +6,11 @@ jQuery(document).ready(function () {
 	var grayColor = '#969696';
 	var grayLightColor = '#dedede';
 
+	// ! search hide on click CROSS
+	$('.search__cross').on('click', function () {
+		$('.search').hide();
+	});
+
 	// ! coloring .search__tags
 	$('.search__tags .card__tag').on('click', function () {
 		$('.search__tags .card__tag').removeClass('card__tag_active');

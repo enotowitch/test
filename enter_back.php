@@ -28,7 +28,7 @@ if(mysqli_num_rows($check_user) > 0){
 	// print_r($_SESSION['user']);
 
 } else {
-	$_SESSION['no_user_in_db'] = 'No user with this data';
+	$_SESSION['validation_msg'] = 'No user with this data';
 	header("location: enter.php");
 }
 

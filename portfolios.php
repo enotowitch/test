@@ -23,8 +23,8 @@ include 'search.php';
 	<!--  -->
 	<div class="main-cards-wrapper">
 	<div class="jobs-portfolios-radio">
-			<div class="jobs-portfolios-radio__jobs radio-btn jobs-portfolios-radio_active">JOBS</div>
-			<a href="portfolios.php"><div class="jobs-portfolios-radio__portfolios radio-btn">PORTFOLIOS</div></a>
+	<a href="index.php"><div class="jobs-portfolios-radio__jobs radio-btn">JOBS</div></a>
+			<div class="jobs-portfolios-radio__portfolios radio-btn jobs-portfolios-radio_active">PORTFOLIOS</div>
 		</div>
 		<div class="main-cards-inner">
 			<!--  -->

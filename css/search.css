@@ -5,12 +5,20 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  margin-bottom: 16px;
 }
 
 .search__body {
   position: relative;
   max-width: 615px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .search__topics {
@@ -83,6 +91,10 @@
 
 .search__input-icon path {
   fill: #969696;
+}
+
+.search__cross {
+  margin-bottom: 8px;
 }
 
 .search__tags .card__tag {

@@ -5,33 +5,7 @@
 $brand-color: #6fda44;
 $gray-color: #969696;
 
-.app-emp-radio {
-	position: relative;
-	z-index: 2;
-	display: flex;
-	justify-content: center;
-	margin-bottom: 16px;
-	&__applicant {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 72px;
-		height: 40px;
-		border-radius: 4px 0 0 4px;
-		background-color: $brand-color;
-		color: #fff;
-	}
-	&__employer {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 72px;
-		height: 40px;
-		background-color: $brand-color;
-		border-radius: 0px 4px 4px 0;
-		background-color: #dedede;
-	}
-}
+
 
 // ! delete
 

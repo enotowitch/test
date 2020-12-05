@@ -2,16 +2,16 @@
 session_start();
 include 'header.php';
 ?>
-
+<!-- // ! IF USER EXISTS => show LOG OUT -->
 <?if($_SESSION['user']): ?>
 	<? echo "HELLO {$_SESSION['user']['user_email']}"; ?>
 	<a href="log_out.php">LOG OUT</a>
 <? endif; ?>
-
+<!-- // ! IF NO USER => show SIGN IN -->
 <?if(!$_SESSION['user']): ?>
 	<a href="enter.php">SIGN IN</a>
 <? endif; ?>
-
+<!-- // ! IF NO USER => show REGISTER -->
 <?if(!$_SESSION['user']): ?>
 	<a href="register_front.php">REGISTER</a>
 <? endif; ?>
@@ -41,43 +41,44 @@ include 'header.php';
 
 
 <form action="enter_back.php" method="POST">
-<a href="register_front.php">Don't have account? REGISTER</a>
+<!-- // ! IF USER EXISTS => don't show REGISTER -->
+<? if(!$_SESSION['user']): ?>
+	<a href="register_front.php">Don't have account? REGISTER</a>
+<? endif; ?>
+
 <br>
 <br>
 <br>
-<!-- Email -->
+<!-- // ! Email -->
 	<label for="user_email">User Email</label>
 	<input type="email" name="user_email" id="user_email">
-<!-- Password -->
+<!-- // ! Password -->
 	<label for="user_pass">Password</label>
 	<input type="password" name="user_pass" id="user_pass">
 
 	<input type="submit" value="SIGN IN">
 	
 	<div>
-		<? if($_SESSION['no_user_in_db']){
-			echo $_SESSION['no_user_in_db'];
-			unset($_SESSION['no_user_in_db']);
+		<? 
+		if($_SESSION['validation_msg']){
+			echo $_SESSION['validation_msg'];
+			unset($_SESSION['validation_msg']);
 		}
-		//  if($_SESSION['empty_email']){
-		// 	echo $_SESSION['empty_email'];
-		// 	unset($_SESSION['empty_email']);
-		// } 
-		//  if($_SESSION['user_added']){
-		// 	echo $_SESSION['user_added'];
-		// 	unset($_SESSION['user_added']);
-		// } 
-		//  if($_SESSION['empty_pass']){
-		// 	echo $_SESSION['empty_pass'];
-		// 	unset($_SESSION['empty_pass']);
-		// } 
-		
 		?>
 	</div>
 </form>
 
 
-
+<!-- ! CURRENT HEADER STYLE  -->
+<style>
+	#sign-in-icon,#sign-in-icon2{
+		fill: #6fda44;
+	}
+	.sign-in{
+		color: #6fda44;
+	}
+	</style>
+	<!-- ? CURRENT HEADER STYLE  -->
 
 <? 
 include 'footer.php';

@@ -95,7 +95,6 @@ body {
 }
 
 .main-cards-inner {
-  padding-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -257,4 +256,44 @@ body {
 
 a:active {
   color: transparent;
+}
+
+.radio-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 98px;
+  height: 40px;
+  border: 2px solid #6fda44;
+}
+
+.jobs-portfolios-radio {
+  margin: 12px 0 auto;
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.jobs-portfolios-radio_active {
+  background-color: #6fda44;
+  color: #fff;
+}
+
+.jobs-portfolios-radio__jobs {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.jobs-portfolios-radio__portfolios {
+  border-radius: 0px 4px 4px 0;
 }

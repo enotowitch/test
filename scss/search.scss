@@ -7,10 +7,13 @@ $gray-light-color: #dedede;
 
 .search {
 	user-select: none;
+	margin-bottom: 16px;
 	&__body {
 		position: relative;
 		max-width: 615px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__topics {
@@ -75,6 +78,9 @@ $gray-light-color: #dedede;
 		path {
 			fill: $gray-color;
 		}
+	}
+	&__cross{
+		margin-bottom: 8px;
 	}
 }
 // ! .search__tags .card__tag
