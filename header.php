@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/post-job.css">
 	<link rel="stylesheet" href="css/profile.css">
 	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" href="css/enter.css">
 	<link rel="stylesheet" href="chosen/chosen.css">
 </head>
 

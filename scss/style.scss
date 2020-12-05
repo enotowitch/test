@@ -152,7 +152,7 @@ a:active {
 }
 // ! jobs-portfolios-radio
 
-.radio-btn{
+.radio-btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -167,7 +167,7 @@ a:active {
 	z-index: 2;
 	display: flex;
 	justify-content: center;
-	&_active{
+	&_active {
 		background-color: $brand-color;
 		color: #fff;
 	}
@@ -175,10 +175,26 @@ a:active {
 		border-radius: 4px 0px 0px 4px;
 	}
 	&__portfolios {
-		
 		border-radius: 0px 4px 4px 0;
 	}
 }
-
-// ! delete
-
+// ! .auth-messages
+.auth-messages {
+	margin: 0 0 16px 16px;
+	font-size: 18px;
+	width: 180px;
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: 828px) {
+		margin: 0 auto 16px;
+		position: relative;
+		left: 4px;
+		border: 2px solid $brand-color;
+		height: 40px;
+		align-items: center;
+		padding: 4px;
+		span{
+			color: $brand-color;
+		}
+	}
+}

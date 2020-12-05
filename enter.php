@@ -7,45 +7,17 @@ include 'header.php';
 	<? echo "HELLO {$_SESSION['user']['user_email']}"; ?>
 	<a href="log_out.php">LOG OUT</a>
 <? endif; ?>
-<!-- // ! IF NO USER => show SIGN IN -->
-<?if(!$_SESSION['user']): ?>
-	<a href="enter.php">SIGN IN</a>
-<? endif; ?>
-<!-- // ! IF NO USER => show REGISTER -->
-<?if(!$_SESSION['user']): ?>
-	<a href="register_front.php">REGISTER</a>
-<? endif; ?>
+
 
 <!--  -->
 <!--  -->
-
-
-<!-- !!! STYLE !!! -->
-<style>
-	form {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 auto;
-		max-width: 500px;
-	}
-
-	input {
-		border: 2px solid red;
-		width: 200px;
-
-	}
-
-	
-</style>
 
 
 <form action="enter_back.php" method="POST">
 <!-- // ! IF USER EXISTS => don't show REGISTER -->
 <? if(!$_SESSION['user']): ?>
-	<a href="register_front.php">Don't have account? REGISTER</a>
+	<a href="register_front.php">Don't have account? SIGN UP</a>
 <? endif; ?>
-
 <br>
 <br>
 <br>

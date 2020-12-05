@@ -3,23 +3,7 @@ session_start();
 include 'header.php';
 ?>
 
-<style>
-	form {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 auto;
-		max-width: 500px;
-	}
 
-	input {
-		border: 2px solid red;
-		width: 200px;
-
-	}
-
-	label {}
-</style>
 
 
 <form action="register_back.php" method="POST">
@@ -36,7 +20,7 @@ include 'header.php';
 	<!-- Confirm Password -->
 	<label for="user_pass_confirm">Confirm Password</label>
 	<input type="password" name="user_pass_confirm" id="user_pass_confirm">
-	<input type="submit" value="REGISTER">
+	<input type="submit" value="SIGN UP">
 	
 	<div>
 		<? if($_SESSION['validation_msg']){
@@ -50,6 +34,16 @@ include 'header.php';
 </form>
 
 
+<!-- ! CURRENT HEADER STYLE  -->
+<style>
+	#sign-in-icon,#sign-in-icon2{
+		fill: #6fda44;
+	}
+	.sign-in{
+		color: #6fda44;
+	}
+	</style>
+	<!-- ? CURRENT HEADER STYLE  -->
 
 
 <? 

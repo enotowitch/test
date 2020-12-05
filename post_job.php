@@ -4,19 +4,11 @@ include 'header.php';
 ?>
 
 
-<?if($_SESSION['user']): ?>
-<? echo "HELLO {$_SESSION['user']['user_email']}"; ?>
-<a href="log_out.php">LOG OUT</a>
-<? endif; ?>
-
-<?if(!$_SESSION['user']): ?>
-<a href="enter.php">SIGN IN</a>
-<? endif; ?>
-
-<?if(!$_SESSION['user']): ?>
-<a href="register_front.php">REGISTER</a>
-<? endif; ?>
-
+<!-- ! auth-messages -->
+<?
+include 'auth-messages.php';
+?>
+<!-- ? auth-messages -->
 
 <!--  -->
 <!--  -->
