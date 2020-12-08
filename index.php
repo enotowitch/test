@@ -42,7 +42,7 @@ include 'search.php';
 			<? foreach($cards as $card): ?>
 
 			<div class="card card-main">
-				<img class="card__logo" src="https://tinyurl.com/yyccy644" alt="worker-logo">
+				<img class="card__logo" src="<? echo $card["job_img"] ?>" alt="post-job-logo">
 				<div class="card__job-title"><? echo $card["job_title"] ?></div>
 				<div class="card__company-name"><? echo $card["job_company_name"] ?></div>
 				<!-- ! card-option -->

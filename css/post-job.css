@@ -107,9 +107,7 @@
 }
 
 .card__input-logo-label {
-  display: block;
   border: 2px solid #969696;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

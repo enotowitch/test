@@ -139,6 +139,8 @@ body {
   position: absolute;
   left: 6px;
   top: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card__job-title {

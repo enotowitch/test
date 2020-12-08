@@ -30,10 +30,10 @@ include 'search.php';
 		<div class="card card__post-job">
 			<form class="post-job-form" action="#" method="post" enctype="multipart/form-data">
 				<!--  -->
-				<label for="card__input-logo" class="card__logo card__input-logo-label">
+				<label for="profile__input-logo" class="card__logo card__input-logo-label">
 					<span></span>
 				</label>
-				<input type="file" class="card__logo card__input-logo">
+				<input type="file" class="card__logo card__input-logo" id="profile__input-logo">
 				<textarea class="card__job-title card__post-job-title" placeholder="Your profession..." maxlength="40"
 					minlength="4"></textarea>
 				<textarea class="card__company-name card__post-job-company-name"

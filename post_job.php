@@ -24,12 +24,12 @@ include 'search.php';
 	<div class="two-cards-flex">
 		<!-- ! card__post-job -->
 		<div class="card card__post-job">
-			<form class="post-job-form" id="post-job-form" action="insert.php" method="post">
+			<form class="post-job-form" id="post-job-form" action="insert.php" method="post" enctype="multipart/form-data">
 				<!--  -->
 				<label for="card__input-logo" class="card__logo card__input-logo-label">
 					<span></span>
 				</label>
-				<input type="file" class="card__logo card__input-logo">
+				<input type="file" class="card__logo card__input-logo" id="card__input-logo" name="post_job_imgs">
 				<textarea class="card__job-title card__post-job-title" id="card__post-job-title" name="job_title"
 					placeholder="Type a job title you're looking for..." maxlength="40" minlength="4"></textarea>
 				<textarea class="card__company-name card__post-job-company-name" id="card__post-job-company-name"
