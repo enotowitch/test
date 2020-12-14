@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="css/search.css">
 	<link rel="stylesheet" href="css/enter.css">
 	<link rel="stylesheet" href="chosen/chosen.css">
+	<link rel="stylesheet" href="slick/slick.css">
+	<link rel="stylesheet" href="slick/slick-theme.css">
 </head>
 
 <body>

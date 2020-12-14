@@ -53,6 +53,11 @@ include 'search.php';
 					<li class="card-option__duration"><? echo $card["job_duration"] ?></li>
 					<li class="card-option__workload"><? echo $card["job_workload"] ?></li>
 					<li class="card-option__example card-option__example_main-card-example">Example</li>
+					<div class="card card-slick" hidden>
+					<img src="" data-lazy="<? echo $card["job_examples"] ?>">
+					<img src="" data-lazy="<? echo $card["job_examples"] ?>">
+					<img src="" data-lazy="<? echo $card["job_examples"] ?>">
+					</div>
 				</ul>
 				<!-- ! card-tags -->
 				<div class="card__tags">

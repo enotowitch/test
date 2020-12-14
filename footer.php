@@ -7,6 +7,7 @@
 	<script src="js/post-job.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/profile.js"></script>
+	<script src="slick/slick.js"></script>
 
 </body>
 

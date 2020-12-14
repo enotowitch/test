@@ -13,6 +13,9 @@ $job_location = $_POST["job_location"];
 $job_duration = $_POST["job_duration"];
 $job_workload = $_POST["job_workload"];
 
+$path = 'uploads/' . $_FILES['post_job_imgs']['name'];
+move_uploaded_file($_FILES['post_job_imgs']['tmp_name'], $path);
+
 
 
 $job_tags = $_POST["job_tags"];
@@ -28,7 +31,7 @@ echo $tag_name_2;
 
 
 $update = mysqli_query($connect, "UPDATE `tbl_card` 
-SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3' 
+SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3', `job_img` = '$path'
 WHERE `tbl_card`.`job_post_id` = $id");
 
 ?>

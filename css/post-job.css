@@ -185,6 +185,15 @@
 }
 
 .card .card-option__post-job-example {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+}
+
+.card .card-option__post-job-example-label {
   border: 1px solid #aaa;
   border-radius: 5px;
   font-size: 13px;
@@ -201,7 +210,10 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  z-index: 11;
+  position: absolute;
+  top: 112px;
+  right: 10px;
+  z-index: 999999;
 }
 
 .card__post-job-icons {

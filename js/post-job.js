@@ -18,10 +18,10 @@ $(document).ready(function () {
 
 
 // ! validation
-		if (jobTitle == '' || jobCompanyName == '' || jobSalary == '0' || jobExp == '0' || jobLocation == '0' || jobDuration == '0' || jobWorkload == '0' || tagsNumberChosen < 3) {
-			alert('ALL FIELDS ARE REQUIRED!');
-			return false;
-		}
+		// if (jobTitle == '' || jobCompanyName == '' || jobSalary == '0' || jobExp == '0' || jobLocation == '0' || jobDuration == '0' || jobWorkload == '0' || tagsNumberChosen < 3) {
+		// 	alert('ALL FIELDS ARE REQUIRED!');
+		// 	return false;
+		// }
 
 		// else {
 		// $.ajax({

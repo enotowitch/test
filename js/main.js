@@ -11,8 +11,8 @@ jQuery(document).ready(function () {
 		$('.TEST-MAIN-banner').hide();
 		$('.search').show();
 	});
-		// ! switch jobs and portfolios
-	$('.radio-btn').on('click', function(){
+	// ! switch jobs and portfolios
+	$('.radio-btn').on('click', function () {
 		$('.radio-btn').removeClass('jobs-portfolios-radio_active');
 		$(this).addClass('jobs-portfolios-radio_active');
 	});
@@ -33,4 +33,13 @@ jQuery(document).ready(function () {
 	$(".post-job-duration-select").chosen({ 'width': '75px', 'max_selected_options': '1', });
 	$(".post-job-workload-select").chosen({ 'width': '95px', 'max_selected_options': '1', });
 
+	// ! slick
+
+	$(document).on('click', '.card-option__example_main-card-example', function () {
+		$(this).next('.card-slick').show().slick({ lazyLoad: 'ondemand', infinite: true, speed: 500, fade: true, cssEase: 'linear' }).append('<img class="icon-scale close-slick" src="img/icons/delete.svg">');
+	});
+
+	$(document).on('click', '.close-slick', function () {
+		$(this).closest('.card-slick').hide();
+	});
 });

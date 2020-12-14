@@ -160,7 +160,7 @@ a:active {
 	width: 98px;
 	height: 40px;
 	border: 2px solid $brand-color;
-	&:hover{
+	&:hover {
 		border: 4px solid #fff;
 		color: $brand-color;
 		// background-color:darken($brand-color, 0%);
@@ -199,8 +199,29 @@ a:active {
 		height: 40px;
 		align-items: center;
 		padding: 4px;
-		span{
+		span {
 			color: $brand-color;
 		}
 	}
+}
+
+//
+
+.card-slick {
+	background-color: #fff;
+	position: absolute;
+	z-index: 9;
+	width: 290px;
+	height: 203px;
+	img:not(.close-slick) {
+		height: 203px;
+		position: relative;
+		object-fit: contain;
+	}
+}
+.close-slick {
+	position: absolute;
+	top: 8px;
+	right: 9px;
+	transform: scale(0.8);
 }

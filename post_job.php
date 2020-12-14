@@ -673,7 +673,11 @@ include 'search.php';
 							<option value="200 h/mo">200 h/mo</option>
 						</select>
 					</li>
-					<li class="card-option__example card-option__post-job-example">Load Example</li>
+					<label for="card-option__post-job-example" class="card-option__post-job-example-label">Load Example</label>
+					
+					<input type="file" class="card-option__example card-option__post-job-example"
+						id="card-option__post-job-example" name="post_job_examples[]" multiple>
+
 				</ul>
 				<!--  -->
 				<div class="card__tags">

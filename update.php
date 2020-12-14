@@ -37,7 +37,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 	.card__post-job{
 		width: 290px;
 		margin: 0 auto;
-	}
+	}	
 	</style>
 
 <? foreach($cards as $card): ?>
@@ -45,12 +45,15 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 
 
 <div class="card card__post-job">
-	<form class="post-job-form" id="post-job-form" action="update2.php" method="post">
+	<form class="post-job-form" id="post-job-form" action="update2.php" method="post" enctype="multipart/form-data">
 		<!--  -->
+		
 		<label for="card__input-logo" class="card__logo card__input-logo-label">
 			<span></span>
 		</label>
-		<input type="file" class="card__logo card__input-logo">
+		<input type="file" class="card__logo card__input-logo" id="card__input-logo" name="post_job_imgs">
+		
+		
 		<textarea class="card__job-title card__post-job-title" id="card__post-job-title" name="job_title"
 			placeholder="Type a job title you're looking for..." maxlength="40" minlength="4"><? echo $card["job_title"] ?></textarea>
 		<textarea class="card__company-name card__post-job-company-name" id="card__post-job-company-name"
