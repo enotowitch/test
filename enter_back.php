@@ -7,7 +7,7 @@ require_once 'DB.php';
 $user_email = $_POST['user_email'];
 $user_pass = md5($_POST['user_pass']);
 
-
+// ! CHECK USER
 $check_user = mysqli_query($connect, 
 "SELECT * FROM `users` WHERE `user_email` = '$user_email' AND `user_pass` = '$user_pass'");
 
@@ -21,15 +21,25 @@ if(mysqli_num_rows($check_user) > 0){
 		"user_id" => $user['user_id'],
 		"user_email" => $user['user_email']
 	];
+// ! ARRAY for ajax JSON
+	$answer = [
+		"status" => true,
+		"msg" => "WELCOME!",
+	];
 
-	header("location: ../post_job.php");
-
+	echo json_encode($answer);
 	
-	// print_r($_SESSION['user']);
 
 } else {
-	$_SESSION['validation_msg'] = 'No user with this data';
-	header("location: enter.php");
+// ! ARRAY for ajax JSON
+	$answer = [
+		"status" => false,
+		"msg" => "No user with this data!",
+	];
+
+	// $_SESSION['validation_msg'] = 'No user with this data';
+
+	echo json_encode($answer);
 }
 
 ?>

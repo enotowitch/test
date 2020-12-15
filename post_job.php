@@ -24,11 +24,13 @@ include 'search.php';
 	<div class="two-cards-flex">
 		<!-- ! card__post-job -->
 		<div class="card card__post-job">
-			<form class="post-job-form" id="post-job-form" action="insert.php" method="post" enctype="multipart/form-data">
+			<!-- ! FORM  -->
+			<form>
 				<!--  -->
 				<label for="card__input-logo" class="card__logo card__input-logo-label">
 					<span></span>
 				</label>
+				<!-- ! input FILE -->
 				<input type="file" class="card__logo card__input-logo" id="card__input-logo" name="post_job_imgs">
 				<textarea class="card__job-title card__post-job-title" id="card__post-job-title" name="job_title"
 					placeholder="Type a job title you're looking for..." maxlength="40" minlength="4"></textarea>
@@ -673,8 +675,9 @@ include 'search.php';
 							<option value="200 h/mo">200 h/mo</option>
 						</select>
 					</li>
-					<label for="card-option__post-job-example" class="card-option__post-job-example-label">Load Example</label>
-					
+					<label for="card-option__post-job-example" class="card-option__post-job-example-label">Load
+						Example</label>
+
 					<input type="file" class="card-option__example card-option__post-job-example"
 						id="card-option__post-job-example" name="post_job_examples[]" multiple>
 
@@ -800,3 +803,80 @@ include 'search.php';
 <? 
 include 'footer.php';
 ?>
+
+
+<script>
+	// insert.php
+
+	$('#post-job-submit').on('click', function (e) {
+
+		e.preventDefault();
+
+		// ! FORM DATA - AKA MULTIPART FORM DATA
+		
+		// ! FILES
+		var file_data = $('#card__input-logo').prop('files')[0];
+
+		var path_example_1 = $('#card-option__post-job-example').prop('files')[0];
+		var path_example_2 = $('#card-option__post-job-example').prop('files')[1];
+		var path_example_3 = $('#card-option__post-job-example').prop('files')[2];
+
+		var form_data = new FormData();
+
+		// VARS
+		// top
+		var job_title = $('#card__post-job-title').val();
+		var job_company_name = $('#card__post-job-company-name').val();
+		//  select INFO
+		var job_salary = $('[name="job_salary"]').find('option:selected').val();
+		var job_exp = $('[name="job_exp"]').find('option:selected').val();
+		var job_location = $('[name="job_location"]').find('option:selected').val();
+		var job_duration = $('[name="job_duration"]').find('option:selected').val();
+		var job_workload = $('[name="job_workload"]').find('option:selected').val();
+		// TAGS
+		var tag_name_1 = $('.search-choice:nth-child(1) span').text();
+		var tag_name_2 = $('.search-choice:nth-child(2) span').text();
+		var tag_name_3 = $('.search-choice:nth-child(3) span').text();
+
+// ! FORM
+
+		// VARS
+		// top
+		form_data.append('file', file_data);
+
+		form_data.append('path_example_1', path_example_1);
+		form_data.append('path_example_2', path_example_2);
+		form_data.append('path_example_3', path_example_3);
+
+
+		form_data.append('job_title', job_title);
+		//  select INFO
+		form_data.append('job_company_name', job_company_name);
+		form_data.append('job_salary', job_salary);
+		form_data.append('job_exp', job_exp);
+		form_data.append('job_location', job_location);
+		form_data.append('job_duration', job_duration);
+		form_data.append('job_workload', job_workload);
+		// TAGS
+		form_data.append('tag_name_1', tag_name_1);
+		form_data.append('tag_name_2', tag_name_2);
+		form_data.append('tag_name_3', tag_name_3);
+
+		$.ajax({
+				url: 'insert.php',
+				dataType: 'text',
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: form_data,
+				type: 'POST',
+				success: function (data) {
+
+window.location.href = 'index.php';
+
+				}
+			});
+
+	})
+
+</script>
