@@ -797,6 +797,12 @@ include 'search.php';
 	#post-job-icon2 {
 		color: #6fda44;
 	}
+
+	/* ! other styles */
+	.card__logo img {
+		top: -2px;
+		left: -2px;
+	}
 </style>
 <!-- ? CURRENT HEADER STYLE  -->
 
@@ -806,14 +812,43 @@ include 'footer.php';
 
 
 <script>
-	// insert.php
+
+	// ! preview logo
+	$('#card__input-logo').on('change', function (e) {
+		var preview = URL.createObjectURL(e.target.files[0]);
+		$('label[for="card__input-logo"]').html('<img class="card__logo" src="' + preview + '" alt="NO">');
+		$('label[for="card__input-logo"]').css({ 'border': 'none' });
+	})
+
+	// ! preview examples - IF > 3 examples disable FORM submit
+	$('#card-option__post-job-example').on('change', function (e) {
+		if (e.target.files.length > 3) {
+			$('label[for="card-option__post-job-example"]').empty().html('<div>3 pics max!</div>').css({ 'background': 'tomato', 'width': '100px' });
+			$('#post-job-submit').attr('disabled', 'disabled');
+		}
+		if (e.target.files.length == 1) {
+			$('label[for="card-option__post-job-example"]').empty().html('<div>1 pic</div>').css({ 'background': '#6fda44', 'width': '45px' });
+		$('#post-job-submit').removeAttr('disabled');
+		}
+		if (e.target.files.length == 2) {
+			$('label[for="card-option__post-job-example"]').empty().html('<div>2 pics</div>').css({ 'background': '#6fda44', 'width': '65px' });
+		$('#post-job-submit').removeAttr('disabled');
+		}
+		if (e.target.files.length == 3) {
+			$('label[for="card-option__post-job-example"]').empty().html('<div>3 pics</div>').css({ 'background': '#6fda44', 'width': '100px' });
+		$('#post-job-submit').removeAttr('disabled');
+		}
+
+	});
+
+	// ! ajax form to insert.php
 
 	$('#post-job-submit').on('click', function (e) {
 
 		e.preventDefault();
 
 		// ! FORM DATA - AKA MULTIPART FORM DATA
-		
+
 		// ! FILES
 		var file_data = $('#card__input-logo').prop('files')[0];
 
@@ -838,7 +873,7 @@ include 'footer.php';
 		var tag_name_2 = $('.search-choice:nth-child(2) span').text();
 		var tag_name_3 = $('.search-choice:nth-child(3) span').text();
 
-// ! FORM
+		// ! FORM
 
 		// VARS
 		// top
@@ -863,19 +898,19 @@ include 'footer.php';
 		form_data.append('tag_name_3', tag_name_3);
 
 		$.ajax({
-				url: 'insert.php',
-				dataType: 'text',
-				cache: false,
-				contentType: false,
-				processData: false,
-				data: form_data,
-				type: 'POST',
-				success: function (data) {
+			url: 'insert.php',
+			dataType: 'text',
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: form_data,
+			type: 'POST',
+			success: function (data) {
 
-window.location.href = 'index.php';
+				window.location.href = 'index.php';
 
-				}
-			});
+			}
+		});
 
 	})
 
