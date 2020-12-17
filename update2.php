@@ -13,25 +13,39 @@ $job_location = $_POST["job_location"];
 $job_duration = $_POST["job_duration"];
 $job_workload = $_POST["job_workload"];
 
-$path = 'uploads/' . $_FILES['post_job_imgs']['name'];
-move_uploaded_file($_FILES['post_job_imgs']['tmp_name'], $path);
+
+
+// ! AJAX TAGS
+$tag_name_1 = $_POST['tag_name_1'];
+$tag_name_2 = $_POST['tag_name_2'];
+$tag_name_3 = $_POST['tag_name_3'];
 
 
 
-$job_tags = $_POST["job_tags"];
 
-// SELECTED TAGS VALUES 
-$i = 1;
-foreach($_POST["job_tags"] as $tagkey) {
-    ${'tag_name_'.$i++} = $tagkey;
-}
+// ! AJAX FILE
 
-echo $tag_name_1;
-echo $tag_name_2;
+// ! Path for uploading logo - IN POST JOB
+$logo_path = 'uploads/' . $_FILES['file']['name'];
+move_uploaded_file($_FILES['file']['tmp_name'], 'uploads/' . $_FILES['file']['name']);
+
+// ! 1
+$path_example_1 = 'uploads/' . $_FILES['path_example_1']['name'];
+move_uploaded_file($_FILES['path_example_1']['tmp_name'], 'uploads/' . $_FILES['path_example_1']['name']);
+// ! 2
+$path_example_2 = 'uploads/' . $_FILES['path_example_2']['name'];
+move_uploaded_file($_FILES['path_example_2']['tmp_name'], 'uploads/' . $_FILES['path_example_2']['name']);
+// ! 3
+$path_example_3 = 'uploads/' . $_FILES['path_example_3']['name'];
+move_uploaded_file($_FILES['path_example_3']['tmp_name'], 'uploads/' . $_FILES['path_example_3']['name']);
+
+
+
+
 
 
 $update = mysqli_query($connect, "UPDATE `tbl_card` 
-SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3', `job_img` = '$path'
+SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3', `job_img` = '$logo_path', `job_example_1`= '$path_example_1', `job_example_2`= '$path_example_2', `job_example_3`= '$path_example_3'
 WHERE `tbl_card`.`job_post_id` = $id");
 
 ?>
