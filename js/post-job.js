@@ -24,15 +24,15 @@ $(document).ready(function () {
 			$('#post-job-submit').attr('disabled', 'disabled');
 		}
 		if (e.target.files.length == 1) {
-			$('label[for="card-option__post-job-example"]').empty().html('<div>1 pic</div>').css({ 'background': '#6fda44', 'width': '45px' });
+			$('label[for="card-option__post-job-example"]').empty().html('<div>1 / 3 pic</div>').css({ 'background': '#6fda44', 'width': '49px' });
 		$('#post-job-submit').removeAttr('disabled');
 		}
 		if (e.target.files.length == 2) {
-			$('label[for="card-option__post-job-example"]').empty().html('<div>2 pics</div>').css({ 'background': '#6fda44', 'width': '65px' });
+			$('label[for="card-option__post-job-example"]').empty().html('<div>2 / 3 pics</div>').css({ 'background': '#6fda44', 'width': '69px' });
 		$('#post-job-submit').removeAttr('disabled');
 		}
 		if (e.target.files.length == 3) {
-			$('label[for="card-option__post-job-example"]').empty().html('<div>3 pics</div>').css({ 'background': '#6fda44', 'width': '100px' });
+			$('label[for="card-option__post-job-example"]').empty().html('<div>3 / 3 pics</div>').css({ 'background': '#6fda44', 'width': '100px' });
 		$('#post-job-submit').removeAttr('disabled');
 		}
 
