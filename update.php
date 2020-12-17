@@ -76,7 +76,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<li class="card-option__salary card-option__post-job-salary" id="card-option__post-job-salary">
 					<select class="post-job-salary-select" name="job_salary" title="Salary">
 						<option selected disabled value="0">Salary</option>
-						<option class="prev-selected" selected value="<? echo $card["job_salary"] ?>">
+						<option class="prev-selected" selected value="<? echo $card[" job_salary"] ?>">
 							<? echo $card["job_salary"] ?>
 						</option>
 						<option value="100 USD">100 USD</option>
@@ -183,7 +183,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<li class="card-option__exp card-option__post-job-exp" id="card-option__post-job-exp">
 					<select class="post-job-exp-select" name="job_exp" title="Experience">
 						<option selected disabled value="0">Experience</option>
-						<option class="prev-selected" selected value="<? echo $card["job_exp"] ?>">
+						<option class="prev-selected" selected value="<? echo $card[" job_exp"] ?>">
 							<? echo $card["job_exp"] ?>
 						</option>
 						<option value="No Exp.">No Exp.</option>
@@ -242,7 +242,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<li class="card-option__location card-option__post-job-location" id="card-option__post-job-location">
 					<select class="post-job-country-select" name="job_location" title="Country">
 						<option selected disabled value="0">Location</option>
-						<option class="prev-selected" selected value="<? echo $card["job_location"] ?>">
+						<option class="prev-selected" selected value="<? echo $card[" job_location"] ?>">
 							<? echo $card["job_location"] ?>
 						</option>
 						<option value="Worldwide">Worldwide</option>
@@ -508,7 +508,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<li class="card-option__duration" id="card-option__post-job-duration">
 					<select class="post-job-duration-select" name="job_duration" title="Duration">
 						<option selected disabled value="0">Duration</option>
-						<option class="prev-selected" selected value="<? echo $card["job_duration"] ?>">
+						<option class="prev-selected" selected value="<? echo $card[" job_duration"] ?>">
 							<? echo $card["job_duration"] ?>
 						</option>
 						<option value="Permanent">Permanent</option>
@@ -519,7 +519,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<li class="card-option__workload" id="card-option__post-job-workload">
 					<select class="post-job-workload-select" name="job_workload" title="Workload">
 						<option selected disabled value="0">Workload</option>
-						<option class="prev-selected" selected value="<? echo $card["job_workload"] ?>">
+						<option class="prev-selected" selected value="<? echo $card[" job_workload"] ?>">
 							<? echo $card["job_workload"] ?>
 						</option>
 						<option value="1 /mo">1 /mo</option>
@@ -740,13 +740,13 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 					data-placeholder="Choose 3 tags..." multiple>
 					<!-- ! PREV SELECTED TAGS -->
 					<!--  -->
-					<option class="prev-selected" selected value="<? echo $card["job_tag_1"] ?>">
+					<option class="prev-selected" selected value="<? echo $card[" job_tag_1"] ?>">
 						<? echo $card["job_tag_1"] ?>
 					</option>
-					<option class="prev-selected" selected value="<? echo $card["job_tag_2"] ?>">
+					<option class="prev-selected" selected value="<? echo $card[" job_tag_2"] ?>">
 						<? echo $card["job_tag_2"] ?>
 					</option>
-					<option class="prev-selected" selected value="<? echo $card["job_tag_3"] ?>">
+					<option class="prev-selected" selected value="<? echo $card[" job_tag_3"] ?>">
 						<? echo $card["job_tag_3"] ?>
 					</option>
 					<!-- ? PREV SELECTED TAGS -->
@@ -842,7 +842,7 @@ include 'footer.php';
 		e.preventDefault();
 
 		// ! FORM DATA - AKA MULTIPART FORM DATA
-		
+
 		// ! FILES
 		var file_data = $('#card__input-logo').prop('files')[0];
 
@@ -869,7 +869,7 @@ include 'footer.php';
 
 		var hidden_id = $('input[name="hidden_id"]').val();
 
-// ! FORM
+		// ! FORM
 
 		// VARS
 		// top
@@ -896,19 +896,19 @@ include 'footer.php';
 		form_data.append('hidden_id', hidden_id);
 
 		$.ajax({
-				url: 'update2.php',
-				dataType: 'text',
-				cache: false,
-				contentType: false,
-				processData: false,
-				data: form_data,
-				type: 'POST',
-				success: function (data) {
+			url: 'update2.php',
+			dataType: 'text',
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: form_data,
+			type: 'POST',
+			success: function (data) {
 
-window.location.href = 'index.php';
+				window.location.href = 'index.php';
 
-				}
-			});
+			}
+		});
 
 	})
 
