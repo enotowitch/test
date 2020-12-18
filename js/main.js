@@ -17,13 +17,6 @@ jQuery(document).ready(function () {
 		$(this).addClass('jobs-portfolios-radio_active');
 	});
 
-
-
-	// ! card hide
-	// $(document).on('click', '.delete', function () {
-	// 	$(this).closest('.card').hide();
-	// })
-	// 
 	// ! chosen
 
 	$(".post-job-tags-select").chosen({ 'width': '245px', 'max_selected_options': '3', });
@@ -42,4 +35,34 @@ jQuery(document).ready(function () {
 	$(document).on('click', '.close-slick', function () {
 		$(this).closest('.card-slick').hide();
 	});
+
+	// ! AJAX DELETE 
+
+	$(document).on('click', '.delete-btn', function (e) {
+		e.preventDefault();
+
+		var hidden_id_delete = $(this).closest('form').find('input[name="hidden_id_delete"]').val();
+
+		var this_card = $(e.target).closest('.card');
+
+		$.ajax({
+			url: 'delete.php',
+			type: 'POST',
+			data: { 'hidden_id_delete': hidden_id_delete },
+			success: function (data) {
+
+				this_card.empty().append('<div class="animate-delete"></div>');
+				this_card.find('.animate-delete').animate({ 'width': '100%' }, 100);
+
+				setTimeout(function () {
+					window.location.href = 'index.php';
+				}, 500);
+
+			},
+		});
+	})
+
+
+
+
 });
