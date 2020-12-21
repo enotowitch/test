@@ -89,13 +89,15 @@ include 'search.php';
 			</div>
 			<!-- ! card-icons -->
 			<div class="card__icons card-icons">
-				<a style="position: absolute; right: 52px;" href="update.php?id=<? echo $card["job_post_id"]
-					?></a>">update</a>
-	<!-- // ! AJAX delete form W/0 SUBMIT BUTTON-->
-				<form>
+					<!-- // ! AJAX update form W/0 SUBMIT BUTTON-->
+	
+					<!-- <input type="hidden" name="hidden_id_update" value="<? echo $card["job_post_id"] ?>">
+					<img class="icon-scale update-btn" src="img/icons/update.svg" alt="update"> -->
+					
+					<!-- // ! AJAX delete form W/0 SUBMIT BUTTON-->
+
 					<input type="hidden" name="hidden_id_delete" value="<? echo $card["job_post_id"] ?>">
 					<img class="delete icon-scale delete-btn" src="img/icons/delete.svg" alt="delete">
-				</form>
 
 				<img class="like icon-scale" src="img/icons/like.svg" alt="like">
 				<img class="apply icon-scale" src="img/icons/apply.svg" alt="apply">
@@ -115,7 +117,7 @@ include 'search.php';
 	</div>
 </div>
 <!--  -->
-<? 
+	<? 
 	include 'footer.php';
 	?>
 

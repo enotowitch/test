@@ -41,7 +41,7 @@ jQuery(document).ready(function () {
 	$(document).on('click', '.delete-btn', function (e) {
 		e.preventDefault();
 
-		var hidden_id_delete = $(this).closest('form').find('input[name="hidden_id_delete"]').val();
+		var hidden_id_delete = $(this).closest('.card').find('input[name="hidden_id_delete"]').val();
 
 		var this_card = $(e.target).closest('.card');
 
@@ -62,6 +62,36 @@ jQuery(document).ready(function () {
 		});
 	})
 
+		$(document).on('click', '.post-job-reset-label', function () {
+			document.location.reload();
+		})
+
+
+	// ! update AJAX on the SAME PAGE
+
+$(document).on('click', '.update-btn', function(e){
+	// e.preventDefault();
+
+	var hidden_id_update = $(e.target).closest('.card').find('input[name="hidden_id_update"]').val();
+	var this_card = $(e.target).closest('.card');
+
+	$('.card').hide();
+	this_card.show();
+	this_card.css({'box-shadow':'1px 4px 5px rgba(111, 218, 68, .5), 1px -2px 5px rgba(111, 218, 68, .5)'})
+
+		$.ajax({
+		url: "update_same_page.php",
+		type: "POST",
+		dataType: "text",
+		data: {hidden_id_update:hidden_id_update},
+		success: function (data) {
+
+			this_card.html(data);
+		},
+	});
+
+
+});
 
 
 

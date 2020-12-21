@@ -1,14 +1,12 @@
-<!-- // ! OLD UPDATE - NOW AJAX -->
 <?
 session_start();
-include 'header.php';
 ?>
 
 <?
 
 require_once 'DB.php';
 
-$id = $_REQUEST['id'];
+$id = $_POST['hidden_id_update'];
 
 
 $cards = mysqli_query($connect, "SELECT * from `tbl_card` WHERE `tbl_card`.`job_post_id` = '$id'");
@@ -31,9 +29,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 	<link rel="stylesheet" href="chosen/chosen.css">
 </head>
 
-<body>
-
-	<style>
+<style>
 		.prev-selected {
 			color: red;
 		}
@@ -50,32 +46,27 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 		}
 	</style>
 
-	<? foreach($cards as $card): ?>
 
+<? foreach($cards as $card): ?>
 
-
-	<div class="card card__post-job">
-
-		<!-- // ! AJAX FORM  -->
-		<!-- action="update2.php" method="POST" enctype="multipart/form-data" -->
-		<form>
+	<form>
 			<!--  -->
-			<label for="card__input-logo" class="card__logo card__input-logo-label">
+			<label for="update__input-logo" class="card__logo card__input-logo-label">
 				<span></span>
 			</label>
 			<!-- ! input FILE -->
-			<input type="file" class="card__logo card__input-logo" id="card__input-logo" name="post_job_imgs">
-			<textarea class="card__job-title card__post-job-title" id="card__post-job-title" name="job_title"
+			<input type="file" class="card__logo card__input-logo" id="update__input-logo" name="post_job_imgs">
+			<textarea class="card__job-title card__post-job-title" id="update__post-job-title" name="update_job_title"
 				placeholder="Type a job title you're looking for..." maxlength="40"
 				minlength="4"><? echo $card["job_title"] ?></textarea>
-			<textarea class="card__company-name card__post-job-company-name" id="card__post-job-company-name"
-				name="job_company_name" placeholder="Type your company name..." maxlength="50"
+			<textarea class="card__company-name card__post-job-company-name" id="update__post-job-company-name"
+				name="update_job_company_name" placeholder="Type your company name..." maxlength="50"
 				minlength="2"><? echo $card["job_company_name"] ?></textarea>
 			<!--  -->
 
 			<ul class="card__post-job-options">
 				<li class="card-option__salary card-option__post-job-salary" id="card-option__post-job-salary">
-					<select class="post-job-salary-select" name="job_salary" title="Salary">
+					<select class="post-job-salary-select" name="update_job_salary" title="Salary">
 						<option selected disabled value="0">Salary</option>
 						<option class="prev-selected" selected value="<? echo $card["job_salary"] ?>">
 							<? echo $card["job_salary"] ?>
@@ -182,7 +173,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 					</select>
 				</li>
 				<li class="card-option__exp card-option__post-job-exp" id="card-option__post-job-exp">
-					<select class="post-job-exp-select" name="job_exp" title="Experience">
+					<select class="post-job-exp-select" name="update_job_exp" title="Experience">
 						<option selected disabled value="0">Experience</option>
 						<option class="prev-selected" selected value="<? echo $card["job_exp"] ?>">
 							<? echo $card["job_exp"] ?>
@@ -241,7 +232,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 					</select>
 				</li>
 				<li class="card-option__location card-option__post-job-location" id="card-option__post-job-location">
-					<select class="post-job-country-select" name="job_location" title="Country">
+					<select class="post-job-country-select" name="update_job_location" title="Country">
 						<option selected disabled value="0">Location</option>
 						<option class="prev-selected" selected value="<? echo $card["job_location"] ?>">
 							<? echo $card["job_location"] ?>
@@ -507,7 +498,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 					</select>
 				</li>
 				<li class="card-option__duration" id="card-option__post-job-duration">
-					<select class="post-job-duration-select" name="job_duration" title="Duration">
+					<select class="post-job-duration-select" name="update_job_duration" title="Duration">
 						<option selected disabled value="0">Duration</option>
 						<option class="prev-selected" selected value="<? echo $card["job_duration"] ?>">
 							<? echo $card["job_duration"] ?>
@@ -518,7 +509,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 					</select>
 				</li>
 				<li class="card-option__workload" id="card-option__post-job-workload">
-					<select class="post-job-workload-select" name="job_workload" title="Workload">
+					<select class="post-job-workload-select" name="update_job_workload" title="Workload">
 						<option selected disabled value="0">Workload</option>
 						<option class="prev-selected" selected value="<? echo $card["job_workload"] ?>">
 							<? echo $card["job_workload"] ?>
@@ -725,11 +716,11 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 						<option value="200 h/mo">200 h/mo</option>
 					</select>
 				</li>
-				<label for="card-option__post-job-example" class="card-option__post-job-example-label">Load
+				<label for="card-option__update-job-example" class="card-option__post-job-example-label">Load
 					Example</label>
 
 				<input type="file" class="card-option__example card-option__post-job-example"
-					id="card-option__post-job-example" name="post_job_examples[]" multiple>
+					id="card-option__update-job-example" name="post_job_examples[]" multiple>
 
 			</ul>
 			<!--  -->
@@ -737,7 +728,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<!-- <div class="card__tag">animation</div>
 						<div class="card__tag">presentation</div>
 						<div class="card__tag">illustration</div> -->
-				<select class="post-job-tags-select" id="post-job-tags-select" name="job_tags[]" title="Choose 3 tags"
+				<select class="post-job-tags-select" id="post-job-tags-select" name="update_job_tags[]" title="Choose 3 tags"
 					data-placeholder="Choose 3 tags..." multiple>
 					<!-- ! PREV SELECTED TAGS -->
 					<!--  -->
@@ -805,8 +796,8 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			<label for="post-job-reset" class="post-job-reset-label icon-scale">
 				<img src="img/icons/cross.svg" alt="post-job-reset">
 			</label>
-			<input class="card__icons card-icons card__post-job-icons post-job-submit" type="submit" id="post-job-submit">
-			<label for="post-job-submit" class="post-job-submit-label icon-scale">
+			<input class="card__icons card-icons card__post-job-icons post-job-submit" type="submit" id="update-job-submit">
+			<label for="update-job-submit" class="post-job-submit-label icon-scale">
 				<img src="img/icons/info-ok-grey.svg" alt="post-job-submit">
 			</label>
 
@@ -814,103 +805,100 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			<input type="hidden" value="<? echo $card['job_post_id'] ?>" name="hidden_id">
 			<!-- ! hiiden ID for update2.php -->
 
-			<label for="post-job-submit" class="post-job-submit-label icon-scale">
-				<img src="img/icons/info-ok-grey.svg" alt="post-job-submit">
-			</label>
 
 			<!-- // ! last -->
 
 		</form>
 
-	</div>
 	<? endforeach; ?>
 
-</body>
+	<? 
+	include 'footer.php';
+	?>
 
-</html>
-
-<?
-include 'footer.php';
-?>
-
-<script>
+	<script>
 
 
-	// ! ajax form to update2.php
+// ! ajax form to update2.php
 
-	$('#post-job-submit').on('click', function (e) {
+$('#update-job-submit').on('click', function (e) {
 
-		e.preventDefault();
-
-		// ! FORM DATA - AKA MULTIPART FORM DATA
-
-		// ! FILES
-		var file_data = $('#card__input-logo').prop('files')[0];
-
-		var path_example_1 = $('#card-option__post-job-example').prop('files')[0];
-		var path_example_2 = $('#card-option__post-job-example').prop('files')[1];
-		var path_example_3 = $('#card-option__post-job-example').prop('files')[2];
-
-		var form_data = new FormData();
-
-		// VARS
-		// top
-		var job_title = $('#card__post-job-title').val();
-		var job_company_name = $('#card__post-job-company-name').val();
-		//  select INFO
-		var job_salary = $('[name="job_salary"]').find('option:selected').val();
-		var job_exp = $('[name="job_exp"]').find('option:selected').val();
-		var job_location = $('[name="job_location"]').find('option:selected').val();
-		var job_duration = $('[name="job_duration"]').find('option:selected').val();
-		var job_workload = $('[name="job_workload"]').find('option:selected').val();
-		// TAGS
-		var tag_name_1 = $('.search-choice:nth-child(1) span').text();
-		var tag_name_2 = $('.search-choice:nth-child(2) span').text();
-		var tag_name_3 = $('.search-choice:nth-child(3) span').text();
-
-		var hidden_id = $('input[name="hidden_id"]').val();
-
-		// ! FORM
-
-		// VARS
-		// top
-		form_data.append('file', file_data);
-
-		form_data.append('path_example_1', path_example_1);
-		form_data.append('path_example_2', path_example_2);
-		form_data.append('path_example_3', path_example_3);
+	var update_card = $(e.target).closest('.card');
+	
 
 
-		form_data.append('job_title', job_title);
-		//  select INFO
-		form_data.append('job_company_name', job_company_name);
-		form_data.append('job_salary', job_salary);
-		form_data.append('job_exp', job_exp);
-		form_data.append('job_location', job_location);
-		form_data.append('job_duration', job_duration);
-		form_data.append('job_workload', job_workload);
-		// TAGS
-		form_data.append('tag_name_1', tag_name_1);
-		form_data.append('tag_name_2', tag_name_2);
-		form_data.append('tag_name_3', tag_name_3);
+	e.preventDefault();
 
-		form_data.append('hidden_id', hidden_id);
+	// ! FORM DATA - AKA MULTIPART FORM DATA
 
-		$.ajax({
-			url: 'update2.php',
-			dataType: 'text',
-			cache: false,
-			contentType: false,
-			processData: false,
-			data: form_data,
-			type: 'POST',
-			success: function (data) {
+	// ! FILES
+	var file_data = $('#update__input-logo').prop('files')[0];
 
-				window.location.href = 'index.php';
+	var path_example_1 = $('#card-option__update-job-example').prop('files')[0];
+	var path_example_2 = $('#card-option__update-job-example').prop('files')[1];
+	var path_example_3 = $('#card-option__update-job-example').prop('files')[2];
 
-			}
-		});
+	var form_data = new FormData();
 
-	})
+	// VARS
+	// top
+	var job_title = $('#update__post-job-title').val();
+	var job_company_name = $('#update__post-job-company-name').val();
+	//  select INFO
+	var job_salary = $('[name="update_job_salary"]').find('option:selected').val();
+	var job_exp = $('[name="update_job_exp"]').find('option:selected').val();
+	var job_location = $('[name="update_job_location"]').find('option:selected').val();
+	var job_duration = $('[name="update_job_duration"]').find('option:selected').val();
+	var job_workload = $('[name="update_job_workload"]').find('option:selected').val();
+	// TAGS
+	var tag_name_1 = update_card.find('.search-choice:nth-child(1) span').text();
+	var tag_name_2 = update_card.find('.search-choice:nth-child(2) span').text();
+	var tag_name_3 = update_card.find('.search-choice:nth-child(3) span').text();
+
+	var hidden_id = $('input[name="hidden_id"]').val();
+
+	// ! FORM
+
+	// VARS
+	// top
+	form_data.append('file', file_data);
+
+	form_data.append('path_example_1', path_example_1);
+	form_data.append('path_example_2', path_example_2);
+	form_data.append('path_example_3', path_example_3);
+
+
+	form_data.append('job_title', job_title);
+	//  select INFO
+	form_data.append('job_company_name', job_company_name);
+	form_data.append('job_salary', job_salary);
+	form_data.append('job_exp', job_exp);
+	form_data.append('job_location', job_location);
+	form_data.append('job_duration', job_duration);
+	form_data.append('job_workload', job_workload);
+	// TAGS
+	form_data.append('tag_name_1', tag_name_1);
+	form_data.append('tag_name_2', tag_name_2);
+	form_data.append('tag_name_3', tag_name_3);
+
+	form_data.append('hidden_id', hidden_id);
+
+	$.ajax({
+		url: 'update2.php',
+		dataType: 'text',
+		cache: false,
+		contentType: false,
+		processData: false,
+		data: form_data,
+		type: 'POST',
+		success: function (data) {
+
+			// window.location.href = 'index.php';
+			document.location.reload();
+
+		}
+	});
+
+})
 
 </script>
