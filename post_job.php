@@ -1,6 +1,8 @@
 <?
 session_start();
 include 'header.php';
+
+$cur_user = $_SESSION['user']['user_id'];
 ?>
 
 
@@ -747,6 +749,8 @@ include 'search.php';
 				<label for="post-job-submit" class="post-job-submit-label icon-scale">
 					<img src="img/icons/info-ok-grey.svg" alt="post-job-submit">
 				</label>
+<!-- // ! USER ID for POSTS -->
+<input type="hidden" id="user_id" value="<? echo $_SESSION['user']['user_id'] ?>">
 
 			</form>
 		</div>
@@ -784,6 +788,7 @@ include 'search.php';
 	</div>
 </section>
 
+<!-- // ! UPDATE - POSTS of the current USER-->
 <section>
 <div class="main-cards-inner">
 		<!--  -->
@@ -794,7 +799,7 @@ include 'search.php';
 			
 			require_once 'DB.php';
 			
-			$cards = mysqli_query($connect, "SELECT * from `tbl_card`");
+			$cards = mysqli_query($connect, "SELECT * from `tbl_card` WHERE `user_id` = '$cur_user'");
 			$cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);			
 			?>
 
@@ -936,6 +941,9 @@ include 'footer.php';
 		var tag_name_1 = $('.search-choice:nth-child(1) span').text();
 		var tag_name_2 = $('.search-choice:nth-child(2) span').text();
 		var tag_name_3 = $('.search-choice:nth-child(3) span').text();
+// ! user_id
+		var user_id = $('#user_id').val();
+
 
 // ! FORM
 
@@ -960,6 +968,7 @@ include 'footer.php';
 		form_data.append('tag_name_1', tag_name_1);
 		form_data.append('tag_name_2', tag_name_2);
 		form_data.append('tag_name_3', tag_name_3);
+		form_data.append('user_id', user_id);
 
 		$.ajax({
 				url: 'insert.php',

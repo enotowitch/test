@@ -16,6 +16,8 @@ $tag_name_1 = $_POST['tag_name_1'];
 $tag_name_2 = $_POST['tag_name_2'];
 $tag_name_3 = $_POST['tag_name_3'];
 
+$user_id = $_POST['user_id'];
+
 
 
 
@@ -42,8 +44,8 @@ move_uploaded_file($_FILES['path_example_3']['tmp_name'], 'uploads/' . $_FILES['
 // 
 
 $insert = mysqli_query($connect, "INSERT INTO `tbl_card` 
-(`job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload`, `job_tag_1`, `job_tag_2`, `job_tag_3`, `job_img`, `job_example_1`, `job_example_2`, `job_example_3`) VALUES 
-         (NULL, '$job_title', '$job_company_name', 'POSTED', '$job_salary', '$job_exp', '$job_location', '$job_duration', '$job_workload' ,'$tag_name_1' ,'$tag_name_2' ,'$tag_name_3','$logo_path','$path_example_1','$path_example_2','$path_example_3')");
+(`job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload`, `job_tag_1`, `job_tag_2`, `job_tag_3`, `job_img`, `job_example_1`, `job_example_2`, `job_example_3`, `user_id`) VALUES 
+         (NULL, '$job_title', '$job_company_name', 'POSTED', '$job_salary', '$job_exp', '$job_location', '$job_duration', '$job_workload' ,'$tag_name_1' ,'$tag_name_2' ,'$tag_name_3','$logo_path','$path_example_1','$path_example_2','$path_example_3','$user_id')");
 
 
 
