@@ -76,8 +76,11 @@ $(document).on('click', '.update-btn', function(e){
 	var this_card = $(e.target).closest('.card');
 
 	$('.card').hide();
+	$('.two-cards-flex__cross').hide();
+	$('.two-cards-flex__arrow').hide();
+
 	this_card.show();
-	this_card.css({'box-shadow':'1px 4px 5px rgba(111, 218, 68, .5), 1px -2px 5px rgba(111, 218, 68, .5)'})
+	this_card.css({'box-shadow':'1px 4px 5px rgba(111, 218, 68, .5), 1px -2px 5px rgba(111, 218, 68, .5)', 'font-style':'italic'})
 
 		$.ajax({
 		url: "update_same_page.php",
