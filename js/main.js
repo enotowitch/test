@@ -41,14 +41,16 @@ jQuery(document).ready(function () {
 	$(document).on('click', '.delete-btn', function (e) {
 		e.preventDefault();
 
-		var hidden_id_delete = $(this).closest('.card').find('input[name="hidden_id_delete"]').val();
-
 		var this_card = $(e.target).closest('.card');
+
+		var hidden_id_delete = this_card.find('input[name="hidden_id_delete"]').val();
+var user_id = this_card.find('#user_id_index').val();
+		
 
 		$.ajax({
 			url: 'delete.php',
 			type: 'POST',
-			data: { 'hidden_id_delete': hidden_id_delete },
+			data: { hidden_id_delete:hidden_id_delete,user_id:user_id },
 			success: function (data) {
 
 				this_card.empty().append('<div class="animate-delete"></div>');

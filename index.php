@@ -1,4 +1,5 @@
-<? 
+<?
+session_start();
 include 'header.php';
 ?>
 <!-- !!! TEST-->
@@ -98,6 +99,9 @@ include 'search.php';
 
 					<input type="hidden" name="hidden_id_delete" value="<? echo $card["job_post_id"] ?>">
 					<img class="delete icon-scale delete-btn" src="img/icons/delete.svg" alt="delete">
+
+					<!-- // ! USER ID for POSTS -->
+<input type="hidden" id="user_id_index" value="<? echo $_SESSION['user']['user_id'] ?>">
 
 				<img class="like icon-scale" src="img/icons/like.svg" alt="like">
 				<img class="apply icon-scale" src="img/icons/apply.svg" alt="apply">
