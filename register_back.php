@@ -8,23 +8,63 @@ $user_pass = $_POST['user_pass'];
 $user_pass_confirm = $_POST['user_pass_confirm'];
 
 // ! validation
-// ! 1
-if($user_pass !== $user_pass_confirm){
 
-	$_SESSION['validation_msg'] = 'Passwords do not match!';
-	header("location: register_front.php");
-// ! 2
-}else if(trim($user_email) == ""){
+$error_fiels = [];
 
-	$_SESSION['validation_msg'] = 'Please enter email!';
-	header("location: register_front.php");
-// ! 3
-}else if($user_pass == "" && $user_pass_confirm == ""){
+// ! user_email
+if(trim(filter_var($user_email, FILTER_VALIDATE_EMAIL)) === ''){
 
-	$_SESSION['validation_msg'] = 'Please enter password!';
-	header("location: register_front.php");
+	$error_fiels[] = 'user_email';
+	$error_msg = 'Please enter email!';
 
-}
+	if(!empty($error_fiels)){
+
+		$answer = [
+		'status' => false,
+		'type' => 'error_fiels',
+		'msg' => $error_msg,
+		'fields' => $error_fiels
+		];
+		
+		echo json_encode($answer);
+		
+			die();
+		}
+
+// ! user_pass
+} 
+if(trim($user_pass) == ""){
+
+	$error_fiels[] = 'user_pass';
+	$error_msg = 'Please enter password!';
+
+} 
+
+// ! user_pass_confirm
+if($user_pass != $user_pass_confirm){
+
+	$error_fiels[] = 'user_pass_confirm';
+	$error_msg = 'Pass do not match!';
+	// $_SESSION['validation_msg'] = 'Passwords do not match!';
+	// header("location: register_front.php");
+
+} 
+
+// ! ERROR FIELDS
+if(!empty($error_fiels)){
+
+	$answer = [
+	'status' => false,
+	'type' => 'error_fiels',
+	'msg' => $error_msg,
+	'fields' => $error_fiels
+	];
+	
+	echo json_encode($answer);
+	
+		die();
+	}
+
 // ! OK
 else {
 // ! insert user to DB
@@ -35,7 +75,14 @@ else {
 	VALUES 
 	(NULL, '$user_email', '$user_pass')");
 
-	$_SESSION['validation_msg'] = 'Registered succesfully!';
+	// $_SESSION['validation_msg'] = 'Registered succesfully!';
+
+	$answer = [
+		'status' => true,
+		'msg' => 'Registered succesfully!',
+		];
+		
+		echo json_encode($answer);
 
 }
 
@@ -55,7 +102,6 @@ if(mysqli_num_rows($check_user) > 0){
 		"user_email" => $user['user_email']
 	];
 
-	header("location: ../post_job.php");
 }
 
 ?>

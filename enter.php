@@ -80,15 +80,38 @@ include 'footer.php';
 				},
 				success: function(response){
 
+					var reg_input_submit = $('.reg-input-submit');
+
 if(response.status == true){
-	$('.reg-input-submit').val(response.msg);
-	$('.reg-input-submit').css({'border': '2px solid #6fda44', 'background': '#6fda44'});
+	reg_input_submit.val(response.msg);
+	reg_input_submit.css({'border': '2px solid #6fda44', 'background': '#6fda44'});
 	document.location.href = 'index.php';
 } 
-if (response.status == false) {
-	$('.reg-input-submit').val(response.msg);	
-	$('.reg-input-submit').css({'border': '2px solid red', 'background': 'red', 'color': '#fff'});
+
+if(response.type == 'error_fiels'){
+	reg_input_submit.val(response.msg);
+	reg_input_submit.css({'border': '2px solid tomato', 'background': 'tomato', 'color': '#fff'});
+	response.fields.forEach(function(field){
+		$(`input[name="${field}"]`).addClass('error');
+		setTimeout(function () {
+			$('input').removeClass('error');
+			reg_input_submit.val('SIGN IN');
+			reg_input_submit.css({'border': '2px solid #6fda44', 'background': '#6fda44'});
+ 				}, 500);
+		
+	})
 }
+
+if (response.type == 'no user') {
+	reg_input_submit.val(response.msg);	
+	reg_input_submit.css({'border': '2px solid tomato', 'background': 'tomato', 'color': '#fff'});
+	setTimeout(function () {
+		reg_input_submit.val('SIGN IN');
+		reg_input_submit.css({'border': '2px solid #6fda44', 'background': '#6fda44'});
+		
+				}, 500);
+}
+
 
 					
 				}

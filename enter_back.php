@@ -5,6 +5,46 @@ require_once 'DB.php';
 
 
 $user_email = $_POST['user_email'];
+$user_pass = $_POST['user_pass'];
+
+// ERROR FIELS
+$error_fiels = [];
+
+if(trim(filter_var($user_email, FILTER_VALIDATE_EMAIL)) === ''){
+	$error_fiels[] = 'user_email';
+	$error_msg = 'Please enter email!';
+
+	$answer = [
+		'type' => 'error_fiels',
+		'msg' => $error_msg,
+		'fields' => $error_fiels
+		];
+		
+		echo json_encode($answer);
+		
+			die();
+}
+if(trim($user_pass) === ''){
+	$error_fiels[] = 'user_pass';
+	$error_msg = 'Please enter pass!';
+}
+// ! OLD ERROR FOR ALL FIELDS
+if(!empty($error_fiels)){
+
+$answer = [
+'type' => 'error_fiels',
+'msg' => $error_msg,
+'fields' => $error_fiels
+];
+
+echo json_encode($answer);
+
+	die();
+}
+
+
+
+
 $user_pass = md5($_POST['user_pass']);
 
 // ! CHECK USER
@@ -34,6 +74,7 @@ if(mysqli_num_rows($check_user) > 0){
 // ! ARRAY for ajax JSON
 	$answer = [
 		"status" => false,
+		"type" => 'no user',
 		"msg" => "No user with this data!",
 	];
 

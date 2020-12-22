@@ -53,8 +53,8 @@ var user_id = this_card.find('#user_id_index').val();
 			data: { hidden_id_delete:hidden_id_delete,user_id:user_id },
 			success: function (data) {
 
-				this_card.empty().append('<div class="animate-delete"></div>');
-				this_card.find('.animate-delete').animate({ 'width': '100%' }, 100);
+				this_card.prepend('<div class="animate-delete"></div>');
+				this_card.find('.animate-delete').animate({ 'width': '100%' }, 500);
 
 				setTimeout(function () {
 					window.location.href = 'index.php';

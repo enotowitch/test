@@ -231,4 +231,10 @@ a:active {
 	height: 100%;
 	background-color: tomato;
 	border-radius: 4px;
+	position: absolute;
+	z-index: 99;
+}
+// ! .error
+.error{
+	border: 2px solid tomato !important;
 }
