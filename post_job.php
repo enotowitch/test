@@ -972,15 +972,48 @@ include 'footer.php';
 
 		$.ajax({
 				url: 'insert.php',
-				dataType: 'text',
+				dataType: 'json',
 				cache: false,
 				contentType: false,
 				processData: false,
 				data: form_data,
 				type: 'POST',
-				success: function (data) {
+				success: function (response) {
 
-window.location.href = 'index.php';
+// ! getting JSON response from insert.php
+					if(response.type == false){
+						response.fields.forEach(function(field){
+							$(`textarea[name="${field}"]`).css({'border':'2px solid tomato'});
+							$(`.chosen-container-single[title="${field}"]`).css({'border':'2px solid tomato', 'border-radius': '5px'});
+// ! IF TAGS < 3 show error
+							if(field == "tags_not_3"){
+								$(`#post_job_tags_select_chosen`).css({'border':'2px solid tomato', 'border-radius': '5px'});
+							} 
+							// ! IF NO LOGO
+							if(field == "no logo"){
+								$('label[for="card__input-logo"]').css({'border':'2px solid tomato'});
+							} 
+							// ! IF EXAMPLES < 3
+							if(field == "examples_not_3"){
+								$('label[for="card-option__post-job-example"]').css({'border':'2px solid tomato'});
+							} 
+// ! timeout for errors
+							setTimeout(() => {
+								$(`textarea[name="${field}"]`).html('').css({'border':'none'});
+								$(`.chosen-container-single[title="${field}"]`).css({'border':'none'});
+								$(`#post_job_tags_select_chosen`).css({'border':'none'});
+								$('label[for="card__input-logo"]').css({'border':'2px solid #969696'});
+								$('label[for="card-option__post-job-example"]').css({'border':'1px solid #aaa'});
+					}, 500);
+						});
+					} 
+// false ends here
+if(response.type == true){
+	$('.card').html(response.msg);
+	setTimeout(() => {
+		window.location.href = 'index.php';
+	}, 2000);
+}
 
 				}
 			});
