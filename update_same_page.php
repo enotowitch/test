@@ -728,7 +728,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				<!-- <div class="card__tag">animation</div>
 						<div class="card__tag">presentation</div>
 						<div class="card__tag">illustration</div> -->
-				<select class="post-job-tags-select" id="post-job-tags-select" name="update_job_tags[]" title="Choose 3 tags"
+				<select class="post-job-tags-select" id="update-job-tags-select" name="update_job_tags[]" title="Choose 3 tags"
 					data-placeholder="Choose 3 tags..." multiple>
 					<!-- ! PREV SELECTED TAGS -->
 					<!--  -->
@@ -885,19 +885,51 @@ $('#update-job-submit').on('click', function (e) {
 
 	$.ajax({
 		url: 'update2.php',
-		dataType: 'text',
+		dataType: 'json',
 		cache: false,
 		contentType: false,
 		processData: false,
 		data: form_data,
 		type: 'POST',
-		success: function (data) {
+		success: function (response) {
 
-			// window.location.href = 'index.php';
-			document.location.reload();
+// ! getting JSON response from update2.php
+					if(response.type == false){
+						response.fields.forEach(function(field){
+							$(`textarea[name="${field}"]`).css({'outline':'2px solid tomato'});
+							// $(`.chosen-container-single[title="${field}"]`).css({'box-shadow':'0 0 3pt 1.5pt tomato', 'border-radius': '5px'});
+// ! IF TAGS < 3 show error
+							if(field == "tags_not_3"){
+								$(`#update_job_tags_select_chosen`).css({'outline':'2px solid tomato', 'border-radius': '5px'});
+							} 
+							// ! IF NO LOGO
+							if(field == "no logo"){
+								$('label[for="update__input-logo"]').css({'border':'2px solid tomato'});
+							} 
+							// ! IF EXAMPLES < 3
+							if(field == "examples_not_3"){
+								$('label[for="card-option__update-job-example"]').css({'box-shadow':'0 0 3pt 1.5pt tomato'});
+							} 
+// ! timeout for errors
+							setTimeout(() => {
+								$(`textarea[name="${field}"]`).html('').css({'outline':'none'});
+								// $(`.chosen-container-single[title="${field}"]`).css({'box-shadow':'none'});
+								$(`#update_job_tags_select_chosen`).css({'outline':'none'});
+								$('label[for="update__input-logo"]').css({'border':'2px solid #969696'});
+								$('label[for="card-option__update-job-example"]').css({'box-shadow':'none'});
+					}, 500);
+						});
+					} 
+// false ends here
+if(response.type == true){
+	$('.card').html(response.msg);
+	setTimeout(() => {
+		window.location.href = 'post_job.php';
+	}, 2000);
+}
 
-		}
-	});
+				}
+			});
 
 })
 

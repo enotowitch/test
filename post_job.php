@@ -983,11 +983,11 @@ include 'footer.php';
 // ! getting JSON response from insert.php
 					if(response.type == false){
 						response.fields.forEach(function(field){
-							$(`textarea[name="${field}"]`).css({'border':'2px solid tomato'});
-							$(`.chosen-container-single[title="${field}"]`).css({'border':'2px solid tomato', 'border-radius': '5px'});
+							$(`textarea[name="${field}"]`).css({'outline':'2px solid tomato'});
+							$(`.chosen-container-single[title="${field}"]`).css({'box-shadow':'0 0 3pt 1.5pt tomato', 'border-radius': '5px'});
 // ! IF TAGS < 3 show error
 							if(field == "tags_not_3"){
-								$(`#post_job_tags_select_chosen`).css({'border':'2px solid tomato', 'border-radius': '5px'});
+								$(`#post_job_tags_select_chosen`).css({'outline':'2px solid tomato', 'border-radius': '5px'});
 							} 
 							// ! IF NO LOGO
 							if(field == "no logo"){
@@ -995,15 +995,15 @@ include 'footer.php';
 							} 
 							// ! IF EXAMPLES < 3
 							if(field == "examples_not_3"){
-								$('label[for="card-option__post-job-example"]').css({'border':'2px solid tomato'});
+								$('label[for="card-option__post-job-example"]').css({'box-shadow':'0 0 3pt 1.5pt tomato'});
 							} 
 // ! timeout for errors
 							setTimeout(() => {
-								$(`textarea[name="${field}"]`).html('').css({'border':'none'});
-								$(`.chosen-container-single[title="${field}"]`).css({'border':'none'});
-								$(`#post_job_tags_select_chosen`).css({'border':'none'});
+								$(`textarea[name="${field}"]`).html('').css({'outline':'none'});
+								$(`.chosen-container-single[title="${field}"]`).css({'box-shadow':'none'});
+								$(`#post_job_tags_select_chosen`).css({'outline':'none'});
 								$('label[for="card__input-logo"]').css({'border':'2px solid #969696'});
-								$('label[for="card-option__post-job-example"]').css({'border':'1px solid #aaa'});
+								$('label[for="card-option__post-job-example"]').css({'box-shadow':'none'});
 					}, 500);
 						});
 					} 

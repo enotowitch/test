@@ -1,5 +1,4 @@
 <?
-header("location: index.php");
 
 require_once 'DB.php';
 
@@ -41,26 +40,57 @@ move_uploaded_file($_FILES['path_example_3']['tmp_name'], 'uploads/' . $_FILES['
 
 
 
+// ! VALIDATION 
 
+$error_fields = [];
+// ! job_title
+if(!$job_title){
+	$error_fields[] = 'update_job_title';
+}
+// ! job_company_name
+if(!$job_company_name){
+	$error_fields[] = 'update_job_company_name';
+}
+// 
+// 
+// 
+// ! CHECK if tags = 3
+if(!($tag_name_3)){
+	$error_fields[] = 'tags_not_3';
+}
+// ! NO LOGO
+if(!$_FILES['file']['name']){
+	$error_fields[] = 'no logo';
+}
+// ! NO 3 EXAMPLES
+if(!$_FILES['path_example_3']['name']){
+	$error_fields[] = 'examples_not_3';
+}
+//
+//
+// ! IF ERRORS
+if(!empty($error_fields)){
+	$response = [
+		'type' => false,
+		'fields' => $error_fields
+	];
+} else{
 
+	$response = [
+		'type' => true,
+		'msg' => 'JOB POST UPDATED!'
+	];
 
-$update = mysqli_query($connect, "UPDATE `tbl_card` 
-SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3', `job_img` = '$logo_path', `job_example_1`= '$path_example_1', `job_example_2`= '$path_example_2', `job_example_3`= '$path_example_3'
-WHERE `tbl_card`.`job_post_id` = $id");
+	$update = mysqli_query($connect, "UPDATE `tbl_card` 
+	SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3', `job_img` = '$logo_path', `job_example_1`= '$path_example_1', `job_example_2`= '$path_example_2', `job_example_3`= '$path_example_3'
+	WHERE `tbl_card`.`job_post_id` = '$id'");
+}
+
+echo json_encode($response);
+
 
 ?>
 
-
-
-
-<pre>
-	<? 
-	var_dump($_POST["job_title"]);
-	
-	// var_dump($job_tags);
-	
-	?>
-</pre>
 
 
 
