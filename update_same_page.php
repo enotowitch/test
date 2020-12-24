@@ -52,10 +52,12 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 	<form>
 			<!--  -->
 			<label for="update__input-logo" class="card__logo card__input-logo-label">
-				<span></span>
+			<img src="<? echo $card["job_img"] ?>" class="card__logo" alt="NO IMG">
 			</label>
 			<!-- ! input FILE -->
+			
 			<input type="file" class="card__logo card__input-logo" id="update__input-logo" name="post_job_imgs">
+			
 			<textarea class="card__job-title card__post-job-title" id="update__post-job-title" name="update_job_title"
 				placeholder="Type a job title you're looking for..." maxlength="40"
 				minlength="4"><? echo $card["job_title"] ?></textarea>
@@ -925,7 +927,7 @@ if(response.type == true){
 	$('.card').html(response.msg);
 	setTimeout(() => {
 		window.location.href = 'post_job.php';
-	}, 2000);
+	}, 500);
 }
 
 				}
