@@ -4,7 +4,9 @@
 
 $(document).ready(function () {
 
-	
+	// hidden on start
+	$('.two-cards-bg').slideDown(500);
+
 // ! (for POST JOB) preview logo
 $(document).on('change','#card__input-logo' ,function (e) {
 	var preview = URL.createObjectURL(e.target.files[0]);

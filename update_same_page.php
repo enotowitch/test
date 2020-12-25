@@ -960,7 +960,8 @@ $.ajax({
 				} 
 // false ends here
 if(response.type == true){
-$('.card').html(response.msg);
+	update_card.html('<div class="success-anim-wid0"><p style="color: white; font-size: 30px">' + response.msg + '</p></div>');
+	$('.success-anim-wid0').animate({'width':'100%'});
 setTimeout(() => {
 	window.location.href = 'post_job.php';
 }, 500);

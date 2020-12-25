@@ -96,7 +96,7 @@ if(!$_FILES['file']['name'] && !$_FILES['path_example_3']['name']){
 
 $response = [
 	'type' => true,
-	'msg' => 'JOB POST UPDATED!'
+	'msg' => 'UPDATED!'
 ];
 
 echo json_encode($response);
@@ -127,7 +127,7 @@ if(!$_FILES['file']['name']){
 
 $response = [
 	'type' => true,
-	'msg' => 'JOB POST UPDATED!'
+	'msg' => 'UPDATED!'
 ];
 
 echo json_encode($response);
@@ -156,7 +156,7 @@ if(!$_FILES['path_example_3']['name']){
 
 $response = [
 	'type' => true,
-	'msg' => 'JOB POST UPDATED!'
+	'msg' => 'UPDATED!'
 ];
 
 echo json_encode($response);
@@ -170,7 +170,7 @@ else{
 
 	$response = [
 		'type' => true,
-		'msg' => 'JOB POST UPDATED!'
+		'msg' => 'UPDATED!'
 	];
 
 	// ! FULL UPDATE

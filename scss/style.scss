@@ -248,9 +248,22 @@ a:active {
 	z-index: 999;
 	border-radius: 4px;
 }
+// ! .updating-card-this
 .updating-card-this {
 	font-style: italic;
 }
-.box-sh-none{
+// ! .box-sh-none
+.box-sh-none {
 	box-shadow: none;
+}
+// ! .success-anim-wid0
+.success-anim-wid0 {
+	position: relative;
+	z-index: 999;
+	width: 0%;
+	height: 100%;
+	background: #6fda44;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

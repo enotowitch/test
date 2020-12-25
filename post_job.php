@@ -22,7 +22,7 @@ include 'search.php';
 <!-- ? SEARCH -->
 
 
-<section class="two-cards-bg" id="post-job">
+<section hidden class="two-cards-bg" id="post-job">
 	<div class="two-cards-flex">
 		<!-- ! card__post-job -->
 		<div class="card card__post-job">

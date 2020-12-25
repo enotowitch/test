@@ -389,3 +389,20 @@ a:active {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+
+.success-anim-wid0 {
+  position: relative;
+  z-index: 999;
+  width: 0%;
+  height: 100%;
+  background: #6fda44;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
