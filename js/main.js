@@ -77,12 +77,12 @@ $(document).on('click', '.update-btn', function(e){
 	var hidden_id_update = $(e.target).closest('.card').find('input[name="hidden_id_update"]').val();
 	var this_card = $(e.target).closest('.card');
 
-	$('.card').hide();
-	$('.two-cards-flex__cross').hide();
-	$('.two-cards-flex__arrow').hide();
+	$('.two-cards-bg').slideUp(800);
+	$('.card').prepend('<div class="updating-card-all"></div>');
+	$('.card').not(this_card).addClass('box-sh-none');
 
-	this_card.show();
-	this_card.css({'box-shadow':'1px 4px 5px rgba(111, 218, 68, .5), 1px -2px 5px rgba(111, 218, 68, .5)', 'font-style':'italic'})
+
+	this_card.addClass('updating-card-this');
 
 		$.ajax({
 		url: "update_same_page.php",

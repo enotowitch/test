@@ -370,3 +370,22 @@ a:active {
 .error {
   border: 2px solid tomato !important;
 }
+
+.updating-card-all {
+  background: #fff;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+  border-radius: 4px;
+}
+
+.updating-card-this {
+  font-style: italic;
+}
+
+.box-sh-none {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}

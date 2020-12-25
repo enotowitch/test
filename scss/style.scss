@@ -226,7 +226,7 @@ a:active {
 	transform: scale(0.8);
 }
 // ! animate-delete
-.animate-delete{
+.animate-delete {
 	width: 0px;
 	height: 100%;
 	background-color: tomato;
@@ -235,6 +235,22 @@ a:active {
 	z-index: 99;
 }
 // ! .error
-.error{
+.error {
 	border: 2px solid tomato !important;
+}
+// ! .updating-card
+.updating-card-all {
+	background: #fff;
+	opacity: 0.9;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 999;
+	border-radius: 4px;
+}
+.updating-card-this {
+	font-style: italic;
+}
+.box-sh-none{
+	box-shadow: none;
 }
