@@ -44,6 +44,9 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 			top: -2px;
 			left: -2px;
 		}
+		.card__input-logo-label{
+			border: none;
+		}
 	</style>
 
 
@@ -51,8 +54,9 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 <body>
 	<form>
 		<!--  -->
-		<label for="update__input-logo" class="card__logo card__input-logo-label">
-		<img src="<? echo $card["job_img"] ?>" class="card__logo" alt="NO IMG">
+		<label for="update__input-logo" class="card__input-logo-label">
+<!-- ! FETCHING img from DB to label to !SIMULATE! uploaded img -->
+		<img src="<? echo $card["job_img"] ?>" class="card__logo" alt="no img FROM DB" style="opacity: 0.5">
 		</label>
 		<!-- ! input FILE -->
 		
@@ -963,7 +967,7 @@ if(response.type == true){
 	update_card.html('<div class="success-anim-wid0"><p style="color: white; font-size: 30px">' + response.msg + '</p></div>');
 	$('.success-anim-wid0').animate({'width':'100%'});
 setTimeout(() => {
-	window.location.href = 'post_job.php';
+	window.location.reload();
 }, 500);
 }
 

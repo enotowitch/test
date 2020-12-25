@@ -96,11 +96,13 @@ include 'search.php';
 			</div>
 			<!-- ! card-icons -->
 			<div class="card__icons card-icons">
-					<!-- // ! AJAX update form W/0 SUBMIT BUTTON-->
-	
-					<!-- <input type="hidden" name="hidden_id_update" value="<? echo $card["job_post_id"] ?>">
-					<img class="icon-scale update-btn" src="img/icons/update.svg" alt="update"> -->
-					
+					<!-- // ! show UPDATE only for CURRENT user -->
+	<? if($_SESSION['user']['user_id'] == $card["user_id"]): ?>
+				<!-- // ! AJAX update form W/0 SUBMIT BUTTON-->
+				<input type="hidden" name="hidden_id_update" value="<? echo $card["job_post_id"] ?>">
+					<img class="icon-scale update-btn" src="img/icons/update.svg" alt="update">
+		<? endif;?>
+
 					<!-- // ! AJAX delete form W/0 SUBMIT BUTTON-->
 
 					<input type="hidden" name="hidden_id_delete" value="<? echo $card["job_post_id"] ?>">

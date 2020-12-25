@@ -98,6 +98,11 @@ $(document).on('click', '.update-btn', function(e){
 
 });
 
+// ! when CURRENT user LOGGED in - hide delete btns from cards of THIS user
+if($('.card-main').find('.card__icons img').hasClass('update-btn')){
+	$('.update-btn').closest('.card-main').addClass('cur-user-hid-del');
+	$('.cur-user-hid-del').find('.card__icons').find('.delete-btn').hide();
+}
 
 
 });
