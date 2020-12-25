@@ -147,7 +147,7 @@
 .card__post-job-title {
   color: #969696;
   width: 200px;
-  height: 40px;
+  height: 37px;
   overflow: hidden;
   resize: none;
   z-index: 10;
@@ -155,7 +155,7 @@
 
 .card__post-job-company-name {
   width: 200px;
-  height: 35px;
+  height: 30px;
   overflow: hidden;
   resize: none;
   z-index: 10;
