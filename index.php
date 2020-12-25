@@ -71,9 +71,15 @@ include 'search.php';
 				</li>
 				<li class="card-option__example card-option__example_main-card-example">Example</li>
 				<div class="card card-slick" hidden>
+				<? if(($card["job_example_1"]) != 'uploads/'): ?>
 					<img src="" data-lazy="<? echo $card["job_example_1"] ?>">
+					<? endif; ?>
+					<? if(($card["job_example_2"]) != 'uploads/'): ?>
 					<img src="" data-lazy="<? echo $card["job_example_2"] ?>">
+					<? endif; ?>
+					<? if(($card["job_example_3"]) != 'uploads/'): ?>
 					<img src="" data-lazy="<? echo $card["job_example_3"] ?>">
+					<? endif; ?>
 				</div>
 			</ul>
 			<!-- ! card-tags -->

@@ -38,7 +38,10 @@ $('#card-option__post-job-example').on('change', function (e) {
 		$('label[for="card-option__post-job-example"]').empty().html('<div>3/3 pics</div>').css({ 'background': '#6fda44', 'width': '100px' });
 	$('#post-job-submit').removeAttr('disabled');
 	}
-
+	// todo later 
+	if (e.target.files.length == 0){
+		location.reload();
+	}
 });
 
 // ! (for update) preview examples - IF > 3 examples disable FORM submit
@@ -59,7 +62,10 @@ $('#card-option__update-job-example').on('change', function (e) {
 		$('label[for="card-option__update-job-example"]').empty().html('<div>3/3 pics</div>').css({ 'background': '#6fda44', 'width': '100px' });
 	$('#update-job-submit').removeAttr('disabled');
 	}
-
+	// todo later 
+	if (e.target.files.length == 0){
+		location.reload();
+	}
 });
 
 

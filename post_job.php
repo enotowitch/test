@@ -832,9 +832,15 @@ include 'search.php';
 				</li>
 				<li class="card-option__example card-option__example_main-card-example">Example</li>
 				<div class="card card-slick" hidden>
+				<? if(($card["job_example_1"]) != 'uploads/'): ?>
 					<img src="" data-lazy="<? echo $card["job_example_1"] ?>">
+					<? endif; ?>
+					<? if(($card["job_example_2"]) != 'uploads/'): ?>
 					<img src="" data-lazy="<? echo $card["job_example_2"] ?>">
+					<? endif; ?>
+					<? if(($card["job_example_3"]) != 'uploads/'): ?>
 					<img src="" data-lazy="<? echo $card["job_example_3"] ?>">
+					<? endif; ?>
 				</div>
 			</ul>
 			<!-- ! card-tags -->
@@ -913,6 +919,8 @@ include 'footer.php';
 	// insert.php
 
 	$('#post-job-submit').on('click', function (e) {
+
+		var insert_card = $(e.target).closest('.card');
 
 		e.preventDefault();
 
@@ -994,7 +1002,7 @@ include 'footer.php';
 								$('label[for="card__input-logo"]').css({'border':'2px solid tomato'});
 							} 
 							// ! IF EXAMPLES < 3
-							if(field == "examples_not_3"){
+							if(field == "examples_not_1"){
 								$('label[for="card-option__post-job-example"]').css({'box-shadow':'0 0 3pt 1.5pt tomato'});
 							} 
 // ! timeout for errors
@@ -1009,7 +1017,10 @@ include 'footer.php';
 					} 
 // false ends here
 if(response.type == true){
-	$('.card').html(response.msg);
+
+	insert_card.html('<div class="success-anim-wid0"><p style="color: white; font-size: 30px">' + response.msg + '</p></div>');
+	$('.success-anim-wid0').animate({'width':'100%'});
+	
 	setTimeout(() => {
 		window.location.href = 'index.php';
 	}, 2000);

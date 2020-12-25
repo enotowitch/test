@@ -78,9 +78,9 @@ if(!($tag_name_3)){
 if(!$_FILES['file']['name']){
 	$error_fields[] = 'no logo';
 }
-// ! NO 3 EXAMPLES
-if(!$_FILES['path_example_3']['name']){
-	$error_fields[] = 'examples_not_3';
+// ! NO atleast 1 EXAMPLE
+if(!$_FILES['path_example_1']['name']){
+	$error_fields[] = 'examples_not_1';
 }
 //
 //
@@ -94,7 +94,7 @@ if(!empty($error_fields)){
 
 	$response = [
 		'type' => true,
-		'msg' => 'JOB POST ADDED!'
+		'msg' => 'POSTED!'
 	];
 
 

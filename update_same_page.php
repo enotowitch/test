@@ -810,15 +810,15 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 <!-- ! HIDDEN pics to count how many are chosen in "LOAD EXAMPLE" -->
 <!--  ! checking how many pics came from db to !SIMULATE! how many loaded -->
 <div hidden id="hidden-example-pics">
-<? if(!empty($card["job_example_1"])): ?>
-	<img src="<? echo $card["job_example_1"] ?>" alt="111">
-<? endif; ?>
-<? if(!empty($card["job_example_2"])): ?>
-	<img src="<? echo $card["job_example_2"] ?>" alt="222">
-<? endif; ?>
-<? if(!empty($card["job_example_3"])): ?>
-	<img src="<? echo $card["job_example_3"] ?>" alt="333">
-<? endif; ?>
+<? if(($card["job_example_1"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["job_example_1"] ?>">
+					<? endif; ?>
+					<? if(($card["job_example_2"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["job_example_2"] ?>">
+					<? endif; ?>
+					<? if(($card["job_example_3"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["job_example_3"] ?>">
+					<? endif; ?>
 </div>
 <!-- ? HIDDEN pics to count how many are chosen in "LOAD EXAMPLE" -->
 		<!-- // ! last -->
