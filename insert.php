@@ -99,7 +99,7 @@ if(!empty($error_fields)){
 
 
 	$insert = mysqli_query($connect, "INSERT INTO `tbl_card` 
-(`job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload`, `job_tag_1`, `job_tag_2`, `job_tag_3`, `job_img`, `job_example_1`, `job_example_2`, `job_example_3`, `user_id`) VALUES 
+(`job_post_id`, `job_title`, `job_company_name`, `job_status`, `job_salary`, `job_exp`, `job_location`, `job_duration`, `job_workload`, `tag_name_1`, `tag_name_2`, `tag_name_3`, `logo_path`, `path_example_1`, `path_example_2`, `path_example_3`, `user_id`) VALUES 
          (NULL, '$job_title', '$job_company_name', 'POSTED', '$job_salary', '$job_exp', '$job_location', '$job_duration', '$job_workload' ,'$tag_name_1' ,'$tag_name_2' ,'$tag_name_3','$logo_path','$path_example_1','$path_example_2','$path_example_3','$user_id')");
 }
 
@@ -108,23 +108,6 @@ echo json_encode($response);
 
 // 
 
-
-
-
-
-// ! old files
-// $path_logo = 'uploads/' . $_FILES['post_job_imgs']['name'];
-// move_uploaded_file($_FILES['post_job_imgs']['tmp_name'], $path_logo);
-
-// // ! Path for uploading example 1
-// $path_example_1 = 'uploads/' . $_FILES['post_job_examples']['name'][0];
-// move_uploaded_file($_FILES['post_job_examples']['tmp_name'][0], $path_example_1);
-// // ! Path for uploading example 2
-// $path_example_2 = 'uploads/' . $_FILES['post_job_examples']['name'][1];
-// move_uploaded_file($_FILES['post_job_examples']['tmp_name'][1], $path_example_2);
-// // ! Path for uploading example 3
-// $path_example_3 = 'uploads/' . $_FILES['post_job_examples']['name'][2];
-// move_uploaded_file($_FILES['post_job_examples']['tmp_name'][2], $path_example_3);
 
 
 ?>

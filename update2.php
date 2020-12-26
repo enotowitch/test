@@ -74,111 +74,95 @@ if(!empty($error_fields)){
 
 
 
-// ! if no NEW LOGO and EXAMPLES => don't update, keep OLD
-if(!$_FILES['file']['name'] && !$_FILES['path_example_3']['name']){
-
-	$update = mysqli_query($connect, "UPDATE `tbl_card` 
-	SET `job_title` = '$job_title',
-	 `job_company_name` = '$job_company_name',
-	 `job_salary` = '$job_salary',
-	 `job_exp` = '$job_exp',
-	 `job_location` = '$job_location',
-	 `job_duration` = '$job_duration',
-	 `job_workload` = '$job_workload',
-	 `job_tag_1` = '$tag_name_1',
-	 `job_tag_2` = '$tag_name_2',
-	 `job_tag_3` = '$tag_name_3'
-	--  `job_img` = '$logo_path',
-	--  `job_example_1`= '$path_example_1',
-	--  `job_example_2`= '$path_example_2',
-	--  `job_example_3`= '$path_example_3'
-	WHERE `tbl_card`.`job_post_id` = '$id'");
-
-$response = [
-	'type' => true,
-	'msg' => 'UPDATED!'
-];
-
-echo json_encode($response);
-
-	return;
-}
-
-
-// ! if no NEW LOGO => don't update, keep OLD
-if(!$_FILES['file']['name']){
-
-	$update = mysqli_query($connect, "UPDATE `tbl_card` 
-	SET `job_title` = '$job_title',
-	 `job_company_name` = '$job_company_name',
-	 `job_salary` = '$job_salary',
-	 `job_exp` = '$job_exp',
-	 `job_location` = '$job_location',
-	 `job_duration` = '$job_duration',
-	 `job_workload` = '$job_workload',
-	 `job_tag_1` = '$tag_name_1',
-	 `job_tag_2` = '$tag_name_2',
-	 `job_tag_3` = '$tag_name_3',
-	--  `job_img` = '$logo_path',
-	 `job_example_1`= '$path_example_1',
-	 `job_example_2`= '$path_example_2',
-	 `job_example_3`= '$path_example_3'
-	WHERE `tbl_card`.`job_post_id` = '$id'");
-
-$response = [
-	'type' => true,
-	'msg' => 'UPDATED!'
-];
-
-echo json_encode($response);
-
-	return;
-}
-// ! if no NEW EXAMPLES => don't update, keep OLD
-if(!$_FILES['path_example_3']['name']){
-	
-	$update = mysqli_query($connect, "UPDATE `tbl_card` 
-	SET `job_title` = '$job_title',
-	 `job_company_name` = '$job_company_name',
-	 `job_salary` = '$job_salary',
-	 `job_exp` = '$job_exp',
-	 `job_location` = '$job_location',
-	 `job_duration` = '$job_duration',
-	 `job_workload` = '$job_workload',
-	 `job_tag_1` = '$tag_name_1',
-	 `job_tag_2` = '$tag_name_2',
-	 `job_tag_3` = '$tag_name_3',
-	 `job_img` = '$logo_path'
-	--  `job_example_1`= '$path_example_1',
-	--  `job_example_2`= '$path_example_2',
-	--  `job_example_3`= '$path_example_3'
-	WHERE `tbl_card`.`job_post_id` = '$id'");
-
-$response = [
-	'type' => true,
-	'msg' => 'UPDATED!'
-];
-
-echo json_encode($response);
-
-	return;
-}
-//
-//
-// ! IF ALL PICS ARE NEW => FULL UPDATE
 else{
+	// ! job_title
+	if(isset($job_title)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_title` = '$job_title'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! job_company_name
+	if(isset($job_company_name)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_company_name` = '$job_company_name'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! job_salary
+	if(isset($job_salary)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_salary` = '$job_salary'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! job_exp
+	if(isset($job_exp)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_exp` = '$job_exp'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! job_location
+	if(isset($job_location)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_location` = '$job_location'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! job_duration
+	if(isset($job_duration)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_duration` = '$job_duration'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! job_workload
+	if(isset($job_workload)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `job_workload` = '$job_workload'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! TAG 1
+	if(isset($tag_name_1)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `tag_name_1` = '$tag_name_1'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! TAG 2
+	if(isset($tag_name_2)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `tag_name_2` = '$tag_name_2'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! TAG 3
+	if(isset($tag_name_3)){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `tag_name_3` = '$tag_name_3'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+	// ! LOGO
+	if($_FILES['file']['name']){
+		mysqli_query($connect, "UPDATE `tbl_card` 
+		SET `logo_path` = '$logo_path'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+	}
+
+
+	// ! if 1 example exists => update all examples, then all EMPTY will have 'uploads/' and will not be shown
+	if($_FILES['path_example_1']['name']){
+mysqli_query($connect, "UPDATE `tbl_card` 
+		SET 
+		`path_example_1` = '$path_example_1',
+		`path_example_2` = '$path_example_2',
+		`path_example_3` = '$path_example_3'
+		WHERE `tbl_card`.`job_post_id` = '$id'");
+		}
+
+
+// ! RESPONSE
 
 	$response = [
-		'type' => true,
-		'msg' => 'UPDATED!'
-	];
-
-	// ! FULL UPDATE
-	$update = mysqli_query($connect, "UPDATE `tbl_card` 
-	SET `job_title` = '$job_title', `job_company_name` = '$job_company_name', `job_salary` = '$job_salary', `job_exp` = '$job_exp', `job_location` = '$job_location', `job_duration` = '$job_duration', `job_workload` = '$job_workload', `job_tag_1` = '$tag_name_1', `job_tag_2` = '$tag_name_2', `job_tag_3` = '$tag_name_3', `job_img` = '$logo_path', `job_example_1`= '$path_example_1', `job_example_2`= '$path_example_2', `job_example_3`= '$path_example_3'
-	WHERE `tbl_card`.`job_post_id` = '$id'");
+	'type' => true,
+	'msg' => 'UPDATED!'
+];
 
 echo json_encode($response);
+
 }
 
 

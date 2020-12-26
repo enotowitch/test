@@ -56,7 +56,7 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 		<!--  -->
 		<label for="update__input-logo" class="card__input-logo-label">
 <!-- ! FETCHING img from DB to label to !SIMULATE! uploaded img -->
-		<img src="<? echo $card["job_img"] ?>" class="card__logo" alt="no img FROM DB" style="opacity: 0.5">
+		<img src="<? echo $card["logo_path"] ?>" class="card__logo" alt="no img FROM DB" style="opacity: 0.5">
 		</label>
 		<!-- ! input FILE -->
 		
@@ -738,14 +738,14 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 				data-placeholder="Choose 3 tags..." multiple>
 				<!-- ! PREV SELECTED TAGS -->
 				<!--  -->
-				<option class="prev-selected" selected value="<? echo $card["job_tag_1"] ?>">
-					<? echo $card["job_tag_1"] ?>
+				<option class="prev-selected" selected value="<? echo $card["tag_name_1"] ?>">
+					<? echo $card["tag_name_1"] ?>
 				</option>
-				<option class="prev-selected" selected value="<? echo $card["job_tag_2"] ?>">
-					<? echo $card["job_tag_2"] ?>
+				<option class="prev-selected" selected value="<? echo $card["tag_name_2"] ?>">
+					<? echo $card["tag_name_2"] ?>
 				</option>
-				<option class="prev-selected" selected value="<? echo $card["job_tag_3"] ?>">
-					<? echo $card["job_tag_3"] ?>
+				<option class="prev-selected" selected value="<? echo $card["tag_name_3"] ?>">
+					<? echo $card["tag_name_3"] ?>
 				</option>
 				<!-- ? PREV SELECTED TAGS -->
 				<!--  -->
@@ -814,14 +814,14 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 <!-- ! HIDDEN pics to count how many are chosen in "LOAD EXAMPLE" -->
 <!--  ! checking how many pics came from db to !SIMULATE! how many loaded -->
 <div hidden id="hidden-example-pics">
-<? if(($card["job_example_1"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["job_example_1"] ?>">
+<? if(($card["path_example_1"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["path_example_1"] ?>">
 					<? endif; ?>
-					<? if(($card["job_example_2"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["job_example_2"] ?>">
+					<? if(($card["path_example_2"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["path_example_2"] ?>">
 					<? endif; ?>
-					<? if(($card["job_example_3"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["job_example_3"] ?>">
+					<? if(($card["path_example_3"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["path_example_3"] ?>">
 					<? endif; ?>
 </div>
 <!-- ? HIDDEN pics to count how many are chosen in "LOAD EXAMPLE" -->

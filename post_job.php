@@ -807,7 +807,7 @@ include 'search.php';
 		<? foreach($cards as $card): ?>
 
 		<div class="card card-main">
-			<img class="card__logo" src="<? echo $card["job_img"] ?>" alt="post-job-logo">
+			<img class="card__logo" src="<? echo $card["logo_path"] ?>" alt="post-job-logo">
 			<div class="card__job-title">
 				<? echo $card["job_title"] ?>
 			</div>
@@ -833,27 +833,27 @@ include 'search.php';
 				</li>
 				<li class="card-option__example card-option__example_main-card-example">Example</li>
 				<div class="card card-slick" hidden>
-				<? if(($card["job_example_1"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["job_example_1"] ?>">
+				<? if(($card["path_example_1"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["path_example_1"] ?>">
 					<? endif; ?>
-					<? if(($card["job_example_2"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["job_example_2"] ?>">
+					<? if(($card["path_example_2"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["path_example_2"] ?>">
 					<? endif; ?>
-					<? if(($card["job_example_3"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["job_example_3"] ?>">
+					<? if(($card["path_example_3"]) != 'uploads/'): ?>
+					<img src="" data-lazy="<? echo $card["path_example_3"] ?>">
 					<? endif; ?>
 				</div>
 			</ul>
 			<!-- ! card-tags -->
 			<div class="card__tags">
 				<div class="card__tag">
-					<? echo $card["job_tag_1"] ?>
+					<? echo $card["tag_name_1"] ?>
 				</div>
 				<div class="card__tag">
-					<? echo $card["job_tag_2"] ?>
+					<? echo $card["tag_name_2"] ?>
 				</div>
 				<div class="card__tag">
-					<? echo $card["job_tag_3"] ?>
+					<? echo $card["tag_name_3"] ?>
 				</div>
 			</div>
 			<!-- ! card-icons -->

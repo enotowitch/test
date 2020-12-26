@@ -741,14 +741,14 @@ $cards = mysqli_fetch_all($cards, MYSQLI_ASSOC);
 					data-placeholder="Choose 3 tags..." multiple>
 					<!-- ! PREV SELECTED TAGS -->
 					<!--  -->
-					<option class="prev-selected" selected value="<? echo $card["job_tag_1"] ?>">
-						<? echo $card["job_tag_1"] ?>
+					<option class="prev-selected" selected value="<? echo $card["tag_name_1"] ?>">
+						<? echo $card["tag_name_1"] ?>
 					</option>
-					<option class="prev-selected" selected value="<? echo $card["job_tag_2"] ?>">
-						<? echo $card["job_tag_2"] ?>
+					<option class="prev-selected" selected value="<? echo $card["tag_name_2"] ?>">
+						<? echo $card["tag_name_2"] ?>
 					</option>
-					<option class="prev-selected" selected value="<? echo $card["job_tag_3"] ?>">
-						<? echo $card["job_tag_3"] ?>
+					<option class="prev-selected" selected value="<? echo $card["tag_name_3"] ?>">
+						<? echo $card["tag_name_3"] ?>
 					</option>
 					<!-- ? PREV SELECTED TAGS -->
 					<!--  -->
