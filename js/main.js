@@ -104,5 +104,39 @@ if($('.card-main').find('.card__icons img').hasClass('update-btn')){
 	$('.cur-user-hid-del').find('.card__icons').find('.delete-btn').hide();
 }
 
+// ! POP UP clone for slick slider
+
+$('.hidden-pop').hide();
+
+$(document).on('click', '.img-zoom' ,function(){
+// ! adding class 'zoom-out' to make unslick later 
+var cloned_slick_slides = $(this).closest('.card-main').find('.img-zoom').addClass('zoom-out').clone();
+
+	$('.hid-zoom').html(cloned_slick_slides);
+	$('.hidden-pop').show();
+
+	$('.hid-zoom').slick({ slidesToShow: 1 });
+// ! removing class 'img-zoom' to prevent init slick on already zoomed imgs
+	$('.hid-zoom').find('.zoom-out').removeClass('img-zoom');
+	
+});
+
+
+$(document).on('click', '.zoom-out', function(){
+
+	$('.hid-zoom').slick("unslick");
+
+	$('.hid-zoom').empty();
+	$('.hidden-pop').hide();
+// ! adding 'img-zoom' to be able to zoom again
+	$('.card-main').find('.zoom-out').addClass('img-zoom').removeClass('zoom-out');
+
+});
+
+
+
+
+
+
 
 });

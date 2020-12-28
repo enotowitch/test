@@ -267,3 +267,25 @@ a:active {
 	align-items: center;
 	justify-content: center;
 }
+// ! POP UP clone for slick slider
+.img-zoom {
+	cursor: zoom-in;
+}
+.hidden-pop {
+	padding: 0 15px;
+	background-color: #fff;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 999;
+	bottom: 0px;
+	left: 0;
+}
+.hid-zoom {
+	img {
+		cursor: zoom-out;
+		max-height: 90vh;
+		object-fit: contain;
+	}
+}
+

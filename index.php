@@ -22,6 +22,11 @@ include 'search.php';
 ?>
 <!-- ? SEARCH -->
 <!--  -->
+<!-- // ! hidden POP UP clone for slick slider  -->
+<div class="hidden-pop">
+<div hidden class="hid-zoom"></div>
+</div>
+
 <div class="main-cards-wrapper">
 	<div class="jobs-portfolios-radio">
 		<div class="jobs-portfolios-radio__jobs radio-btn jobs-portfolios-radio_active">JOBS</div>
@@ -72,13 +77,13 @@ include 'search.php';
 				<li class="card-option__example card-option__example_main-card-example">Example</li>
 				<div class="card card-slick" hidden>
 				<? if(($card["path_example_1"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["path_example_1"] ?>">
+					<img class="img-zoom" src="" data-lazy="<? echo $card["path_example_1"] ?>">
 					<? endif; ?>
 					<? if(($card["path_example_2"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["path_example_2"] ?>">
+					<img class="img-zoom" src="" data-lazy="<? echo $card["path_example_2"] ?>">
 					<? endif; ?>
 					<? if(($card["path_example_3"]) != 'uploads/'): ?>
-					<img src="" data-lazy="<? echo $card["path_example_3"] ?>">
+					<img class="img-zoom" src="" data-lazy="<? echo $card["path_example_3"] ?>">
 					<? endif; ?>
 				</div>
 			</ul>
