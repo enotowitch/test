@@ -26,15 +26,6 @@ jQuery(document).ready(function () {
 	$(".post-job-duration-select").chosen({ 'width': '75px', 'max_selected_options': '1', });
 	$(".post-job-workload-select").chosen({ 'width': '95px', 'max_selected_options': '1', });
 
-	// ! slick
-
-	$(document).on('click', '.card-option__example_main-card-example', function () {
-		$(this).next('.card-slick').show().slick({ lazyLoad: 'ondemand', infinite: true, speed: 500, fade: true, cssEase: 'linear' }).append('<img class="icon-scale close-slick" src="img/icons/delete.svg">');
-	});
-
-	$(document).on('click', '.close-slick', function () {
-		$(this).closest('.card-slick').hide();
-	});
 
 	// ! AJAX DELETE 
 
@@ -104,37 +95,94 @@ if($('.card-main').find('.card__icons img').hasClass('update-btn')){
 	$('.cur-user-hid-del').find('.card__icons').find('.delete-btn').hide();
 }
 
-// ! POP UP clone for slick slider
+	// ! MAIN slick
 
-$('.hidden-pop').hide();
+	$(document).on('click', '.card-option__example_main-card-example', function () {
+		$(this).next('.card-slick').show().slick({ asNavFor: '.slider', lazyLoad: 'ondemand', infinite: true, speed: 500, fade: true, cssEase: 'linear' }).append('<img class="icon-scale close-slick" src="img/icons/delete.svg">');
+	});
+
+	$(document).on('click', '.close-slick', function () {
+		$(this).closest('.card-slick').hide();
+	});
+
+	//
+	// todo FIRST click on any 'watch next' slide does not work
+	//
+
+// ! MAKING FAKE SLIDER -> preventing 'Cannot read property 'getSlick' of undefined' so any slider should exist
+$('.slider').slick({slidesToShow: 1, asNavFor: '.nav-for' });
+// ! hidding slider to show when 'img-zoom' clicked
+$('.slider-wrap').hide();
+
 
 $(document).on('click', '.img-zoom' ,function(){
-// ! adding class 'zoom-out' to make unslick later 
-var cloned_slick_slides = $(this).closest('.card-main').find('.img-zoom').addClass('zoom-out').clone();
 
-	$('.hid-zoom').html(cloned_slick_slides);
-	$('.hidden-pop').show();
+	// ! destroy FAKE SLIDER
+	$('.slider').slick("unslick");
 
-	$('.hid-zoom').slick({ slidesToShow: 1 });
-// ! removing class 'img-zoom' to prevent init slick on already zoomed imgs
-	$('.hid-zoom').find('.zoom-out').removeClass('img-zoom');
+	var cur_slick_index = $(this).closest('.card-main').find('.slick-current').attr('data-slick-index');
+	var cloned_slick_slides = $(this).closest('.card-main').find('.img-zoom').addClass('zoom-out').clone();
 	
-});
+	// ! removing 'nav-for' to prevent SLIDING different sliders  
+	$('.card-main').find('.card-slick').removeClass('nav-for');
+	$(this).closest('.card-main').find('.card-slick').addClass('nav-for');
 
+	$('.slider').html(cloned_slick_slides);
+	$('.slider').slick({slidesToShow: 1, asNavFor: '.nav-for' });
+	$('.slider').slick('goTo', parseInt(cur_slick_index));
+
+	$('.slider-wrap').show();
+
+// ! removing class 'img-zoom' to prevent init SLIDER on already zoomed imgs
+	$('.slider').find('.zoom-out').removeClass('img-zoom');
+
+});
 
 $(document).on('click', '.zoom-out', function(){
 
-	$('.hid-zoom').slick("unslick");
+		$('.slider').slick("unslick");
+	
+		$('.slider').empty();
+		$('.slider-wrap').hide();
+	// ! adding 'img-zoom' to be able to zoom again
+		$('.card-main').find('.zoom-out').addClass('img-zoom').removeClass('zoom-out');
+	
+	});
 
-	$('.hid-zoom').empty();
-	$('.hidden-pop').hide();
-// ! adding 'img-zoom' to be able to zoom again
-	$('.card-main').find('.zoom-out').addClass('img-zoom').removeClass('zoom-out');
+	// ! OLD
 
-});
+// // ! POP UP clone for slick slider
+
+// $('.hidden-pop').hide();
+
+// $(document).on('click', '.img-zoom' ,function(){
+// // ! adding class 'zoom-out' to make unslick later 
+// var cur_slick_index = $(this).closest('.card-main').find('.slick-current').attr('data-slick-index');
+
+// var cloned_slick_slides = $(this).closest('.card-main').find('.img-zoom').addClass('zoom-out').clone();
+
+// 	$('.hid-zoom').html(cloned_slick_slides);
+// 	$('.hidden-pop').show();
+
+// 	$('.hid-zoom').slick({ slidesToShow: 1 });
+// 	$('.hid-zoom').slick('goTo', parseInt(cur_slick_index) );
+
+// // ! removing class 'img-zoom' to prevent init slick on already zoomed imgs
+// 	$('.hid-zoom').find('.zoom-out').removeClass('img-zoom');
+	
+// });
 
 
+// $(document).on('click', '.zoom-out', function(){
 
+// 	$('.hid-zoom').slick("unslick");
+
+// 	$('.hid-zoom').empty();
+// 	$('.hidden-pop').hide();
+// // ! adding 'img-zoom' to be able to zoom again
+// 	$('.card-main').find('.zoom-out').addClass('img-zoom').removeClass('zoom-out');
+
+// });
 
 
 

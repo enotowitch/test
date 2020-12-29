@@ -23,9 +23,14 @@ include 'search.php';
 <!-- ? SEARCH -->
 <!--  -->
 <!-- // ! hidden POP UP clone for slick slider  -->
-<div class="hidden-pop">
-<div hidden class="hid-zoom"></div>
+<div class="slider-wrap">
+<div hidden class="slider"></div>
 </div>
+
+<!-- // ! OLD big slider  -->
+<!-- <div class="hidden-pop">
+<div hidden class="hid-zoom"></div>
+</div> -->
 
 <div class="main-cards-wrapper">
 	<div class="jobs-portfolios-radio">

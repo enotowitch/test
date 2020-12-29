@@ -268,10 +268,11 @@ a:active {
 	justify-content: center;
 }
 // ! POP UP clone for slick slider
+// ! big slider
 .img-zoom {
 	cursor: zoom-in;
 }
-.hidden-pop {
+.slider-wrap {
 	padding: 0 15px;
 	background-color: #fff;
 	width: 100vw;
@@ -281,11 +282,28 @@ a:active {
 	bottom: 0px;
 	left: 0;
 }
-.hid-zoom {
+.slider {
 	img {
 		cursor: zoom-out;
 		max-height: 90vh;
 		object-fit: contain;
 	}
 }
-
+// // ! OLD big slider
+// .hidden-pop {
+// 	padding: 0 15px;
+// 	background-color: #fff;
+// 	width: 100vw;
+// 	height: 100vh;
+// 	position: fixed;
+// 	z-index: 999;
+// 	bottom: 0px;
+// 	left: 0;
+// }
+// .hid-zoom {
+// 	img {
+// 		cursor: zoom-out;
+// 		max-height: 90vh;
+// 		object-fit: contain;
+// 	}
+// }

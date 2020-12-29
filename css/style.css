@@ -412,7 +412,7 @@ a:active {
   cursor: zoom-in;
 }
 
-.hidden-pop {
+.slider-wrap {
   padding: 0 15px;
   background-color: #fff;
   width: 100vw;
@@ -423,7 +423,7 @@ a:active {
   left: 0;
 }
 
-.hid-zoom img {
+.slider img {
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
   max-height: 90vh;
